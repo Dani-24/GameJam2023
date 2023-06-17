@@ -8,13 +8,16 @@ public class Player : MonoBehaviour
     [SerializeField] private float vel = 2;
     private Rigidbody2D playerRB;
     private Vector2 input;
-    private Vector2 mousePos;
-    private Camera cam;
+    [SerializeField]private int lives=3;
+    [SerializeField]private int life=1;
+    private bool isDamaging = false;
+    [SerializeField] private Transform startTrans;
 
+    //List<PlayerEcoActions> actionsList;
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
-       // cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        startTrans = gameObject.transform;
     }
 
     // Update is called once per frame
@@ -22,21 +25,56 @@ public class Player : MonoBehaviour
     {
          input.x = Input.GetAxis("Horizontal");
          input.y = Input.GetAxis("Vertical");
+        //if(input.x>0 || input.y>0)
+        //{
 
-        // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        //}
 
-        
     }
-
     private void FixedUpdate()
     {
         playerRB.velocity = new Vector2(input.x * vel, input.y * vel);
-       
+    }
+
+    public Vector2 GetInputPlayer()
+    {
+
+        return input;
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        life -= dmg;
+        lives -= 1;
+        if(life<=0 )
+        {
+            if(lives<=0)
+            {
+
+                //Die();
+                
+            }
+            else
+            {
+                isDamaging = true;
+            }
+        }
         
-        //Vector2 lookDir = mousePos - playerRB.position;
 
-        //float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+    }
 
-        //playerRB.rotation = rotZ;
+    public bool GetIsDamaging()
+    {
+        return isDamaging;
+    }
+    
+    public void SetIsDamaging(bool _isDmg)
+    {
+         isDamaging =_isDmg;
+    }
+
+    public Transform GetStartTransform()
+    {
+        return startTrans;
     }
 }
