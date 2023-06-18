@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 40d92226851fc7d4a9f16f3a9feac35e, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: PlayerAnim
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 40d92226851fc7d4a9f16f3a9feac35e, type: 3}
       propertyPath: m_IsActive
@@ -1041,6 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f823fd2f7b21f624386b762c671ec561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mousePos: {x: 0, y: 0}
 --- !u!4 &9541115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -774719657839413124, guid: 40d92226851fc7d4a9f16f3a9feac35e, type: 3}
@@ -1838,7 +1839,7 @@ GameObject:
   - component: {fileID: 1325150417}
   - component: {fileID: 1325150422}
   m_Layer: 0
-  m_Name: PlayerParent
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1932,7 +1933,7 @@ Transform:
   m_GameObject: {fileID: 1325150416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9541105}
@@ -1953,8 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 9541107}
-  playerBody: {fileID: 1325150420}
-  minVelocity: 0.1
+  mouseAim: {fileID: 2126447407}
 --- !u!4 &1370859068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7058716360545960897, guid: 40d92226851fc7d4a9f16f3a9feac35e, type: 3}
@@ -2478,6 +2478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f823fd2f7b21f624386b762c671ec561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mousePos: {x: 0, y: 0}
 --- !u!4 &2126447408
 Transform:
   m_ObjectHideFlags: 0

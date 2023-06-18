@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVel = 15f;
     private Transform bulletSpawn;
@@ -17,7 +16,6 @@ public class Gun : MonoBehaviour
         bulletSpawn = GameObject.FindGameObjectWithTag("Gun").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         _shootDt += Time.deltaTime;
