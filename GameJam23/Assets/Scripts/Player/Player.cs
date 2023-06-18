@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private bool isDamaging = false;
     [SerializeField] private Transform startTrans;
     [SerializeField] private int clones = 2;
+
     //List<PlayerEcoActions> actionsList;
     void Start()
     {
