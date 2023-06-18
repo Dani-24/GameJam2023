@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c1c02fc3810184eb3f468ec40dbb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollideWithTheseTags:
+  - Enemy
+  - Wall
 --- !u!61 &7848246466914007932
 BoxCollider2D:
   m_ObjectHideFlags: 0
