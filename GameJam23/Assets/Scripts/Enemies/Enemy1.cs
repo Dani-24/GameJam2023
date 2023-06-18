@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEditor.U2D;
 using UnityEngine;
 
@@ -11,16 +12,32 @@ public class Enemy1 : MonoBehaviour
     int HP = 1;
     [SerializeField]
     float movementSpeed = 1;
-    
+
+    [SerializeField]
+    float shootingCooldown = 1.0f;
+    float actualShootingCooldown;
+
+    [SerializeField]
+    float bulletVel = 1.0f;
+
+    [SerializeField]
+    bool startLookingLeft = true;
+
     public List<string> chaseTheseTags = new List<string>();
 
     [SerializeField]
     List<string> dieByTheseTags = new List<string>();
 
+    [SerializeField]
+    ShieldDirection shieldDirection = ShieldDirection.Disabled;
+
     private Vector3 originalScale;
     private Vector3 flippedScale;
 
-    [Header("Movement (Leave PatrolCheckpoint empty if this enemy movementType != patrol)")]
+    [SerializeField]
+    Transform bulletSpawnPosition;
+
+    [Header("Movement")]
     [SerializeField]
     MovTypes movementType = MovTypes.Wander;
 
@@ -38,13 +55,41 @@ public class Enemy1 : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
 
-    [Header("Other VFX")]
+    [Header("Required Prefabs")]
+    [SerializeField]
+    GameObject ShieldGameObject;
+
+    [SerializeField]
+    GameObject bulletPrefab;
+
+    [SerializeField]
+    Transform DetectionAreaTransform;
+
+    [Header("Other")]
     public ParticleSystem DieParticleSystem;
+
+    [SerializeField]
+    GameObject shootRTop;
+    [SerializeField]
+    GameObject shootRBot;
+    [SerializeField]
+    GameObject shootLTop;
+    [SerializeField]
+    GameObject shootLBot;
 
     private void Start()
     {
+        
+
         flippedScale = originalScale = transform.localScale;
         flippedScale.x *= -1;
+
+        if (!startLookingLeft)
+        {
+            transform.localScale = flippedScale;
+        }
+
+        actualShootingCooldown = shootingCooldown;
 
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -53,6 +98,27 @@ public class Enemy1 : MonoBehaviour
         {
             currentCheckpoint = patrolCheckpoints[0];
         }
+
+        if(shieldDirection != ShieldDirection.Disabled)
+        {
+            ShieldGameObject.SetActive(true);
+
+            switch(shieldDirection)
+            {
+                case ShieldDirection.Down:
+                    ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    break;
+                case ShieldDirection.Up:
+                    ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    break;
+                case ShieldDirection.Left:
+                    ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    break;
+                case ShieldDirection.Right:
+                    ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    break;
+            }
+        }
     }
 
     void Update()
@@ -60,21 +126,28 @@ public class Enemy1 : MonoBehaviour
         if (HP <= 0)
         {
             currentState = EnemyStates.Dead;
+
+            DieParticleSystem.Play();
+            animator.SetTrigger("die");
+            Destroy(this.transform.parent.gameObject, 1);
         }
         else if (currentlyTargeting != null)
         {
-            currentState = EnemyStates.Chasing;
-            animator.SetBool("idle", false);
+            if (actualShootingCooldown > 0)
+            {
+                currentState = EnemyStates.Chasing;
+                animator.SetBool("idle", false);
+
+                actualShootingCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                EnemyShoot();
+            }
         }
         else { 
             currentState = EnemyStates.Idle;
             animator.SetBool("idle", true);
-        }
-
-        if (currentState == EnemyStates.Dead) { 
-            DieParticleSystem.Play();
-            animator.SetTrigger("die");
-            Destroy(this.gameObject,1);
         }
     }
 
@@ -114,14 +187,21 @@ public class Enemy1 : MonoBehaviour
         }
 
         // Que el enemigo mire a donde se mueve
-        if (rb.velocity.x <= 0)
+        if (rb.velocity.x != 0 && movementType != MovTypes.Fixed)
         {
-            transform.localScale = originalScale;
+            if (rb.velocity.x < 0)
+            {
+                transform.localScale = originalScale;
+            }
+            else
+            {
+                transform.localScale = flippedScale;
+            }
         }
-        else
-        {
-            transform.localScale = flippedScale;
-        }
+
+        // Update Posición del Shield y del area de detección
+        ShieldGameObject.transform.position = transform.position;
+        DetectionAreaTransform.position = transform.position;
     }
 
     // Movimiento
@@ -155,7 +235,57 @@ public class Enemy1 : MonoBehaviour
         currentlyTargeting = target;
     }
 
-    // ESTADOS DEL BICHO =========
+    // Pium Pium por parte del enemy al player
+
+    void EnemyShoot()
+    {
+        if (CalculateDirection())
+        {
+            currentState = EnemyStates.Attacking;
+
+            animator.SetTrigger("shoot");
+
+            actualShootingCooldown = shootingCooldown;
+
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPosition.position, bulletSpawnPosition.rotation);
+            Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
+            bulletRB.AddForce(bulletSpawnPosition.up * bulletVel, ForceMode2D.Impulse);
+        }
+    }
+
+    bool CalculateDirection()
+    {
+        Vector2 lookDir = currentlyTargeting.transform.position - transform.position;
+        float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        bulletSpawnPosition.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        if (movementType == MovTypes.Fixed)
+        {
+            bool isRight;
+
+            if (rotZ < 0 && rotZ > -180)
+            {
+                isRight = true;
+            }
+            else
+            {
+                isRight = false;
+            }
+
+            if (isRight && transform.localScale == flippedScale || !isRight && transform.localScale == originalScale)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // ESTADOS DEL BICHO ========
 
     public enum EnemyStates
     {
@@ -169,6 +299,16 @@ public class Enemy1 : MonoBehaviour
     {
         Wander,
         Patrol,
-        Stationary
+        Stationary,
+        Fixed
+    }
+
+    public enum ShieldDirection
+    {
+        Left,
+        Right,
+        Up,
+        Down,
+        Disabled
     }
 }

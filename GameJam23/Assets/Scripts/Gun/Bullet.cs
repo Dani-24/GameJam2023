@@ -11,9 +11,20 @@ public class Bullet : MonoBehaviour
     {
         foreach (var tag in CollideWithTheseTags)
         {
-            if (collision.gameObject.CompareTag(tag) && !collision.isTrigger)
+            if (collision.CompareTag(tag))
             {
                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        foreach (var tag in CollideWithTheseTags)
+        {
+            if (collision.gameObject.CompareTag(tag))
+            {
+                Destroy(gameObject);
             }
         }
     }

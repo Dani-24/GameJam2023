@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseAim : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Vector2 mousePos;
+    public Vector2 mousePos;
     private Camera cam;
     private GameObject player;
     private Rigidbody2D playerRB;

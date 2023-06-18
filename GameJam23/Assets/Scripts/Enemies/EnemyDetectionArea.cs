@@ -24,14 +24,11 @@ public class EnemyDetectionArea : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (var tag in enemyScript.chaseTheseTags)
+        if (enemyScript.currentlyTargeting != null)
         {
-            if (enemyScript.currentlyTargeting != null)
+            if (collision.tag == enemyScript.currentlyTargeting.tag)
             {
-                if (collision.tag == enemyScript.currentlyTargeting.tag)
-                {
-                    enemyScript.SetTarget(null);
-                }
+               enemyScript.SetTarget(null);
             }
         }
     }
