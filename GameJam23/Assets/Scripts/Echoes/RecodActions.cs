@@ -76,5 +76,9 @@ public class RecodActions : MonoBehaviour
         isRecording = false;
     }
 
+    public void SetCanRecord(bool state)
+    {
+        canRedcord = state;
+    }
 
 }

@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float shootDelay = 0.3f;
 
     private bool isShooting = false;
+    private bool ecoCanShoot = false;
     void Start()
     {
         bulletSpawn = GameObject.FindGameObjectWithTag("Gun").transform;
@@ -20,13 +21,14 @@ public class Gun : MonoBehaviour
     {
         _shootDt += Time.deltaTime;
         isShooting = false;
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0) || ecoCanShoot)
         {
             if (_shootDt >= shootDelay)
             {
                 BulletInstance();
                 _shootDt = 0;
                 isShooting = true;
+                ecoCanShoot = false;
             }
            
         }
@@ -44,5 +46,12 @@ public class Gun : MonoBehaviour
     {
         return isShooting;
     }
+    
+    public void SetEcoCanShoot(bool _canShoot=true)
+    {
+        ecoCanShoot = _canShoot ;
+    }
+
+
 
 }

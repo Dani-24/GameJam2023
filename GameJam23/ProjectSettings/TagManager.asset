@@ -8,6 +8,9 @@ TagManager:
   - Bullet
   - Enemy
   - Wall
+  - PlayerGun
+  - EcoGun
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

@@ -13,18 +13,21 @@ public class EcoManager : MonoBehaviour
     {
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        actionToDo = player.GetComponent<RecodActions>();
     }
 
     // Update is called once per frame
-    void PostUpdate()
+
+    private void LateUpdate()
     {
-        if(player.GetIsDamaging() || Input.GetKeyDown(KeyCode.Space))
+        if (player.GetIsDamaging() || Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject eco = Instantiate(ecoPrefab,player.GetStartTransform().position, player.GetStartTransform().rotation);
+            actionToDo.SetCanRecord(false);
+            GameObject eco = Instantiate(ecoPrefab, player.GetStartTransform().position, player.GetStartTransform().rotation);
             if (player.GetIsDamaging()) player.SetIsDamaging(false);
 
         }
+
     }
-    
 
 }
