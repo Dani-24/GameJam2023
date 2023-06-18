@@ -7,6 +7,11 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     List<string> CollideWithTheseTags = new List<string>();
 
+    private void Start()
+    {
+        Destroy(this.gameObject, 5f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         foreach (var tag in CollideWithTheseTags)
