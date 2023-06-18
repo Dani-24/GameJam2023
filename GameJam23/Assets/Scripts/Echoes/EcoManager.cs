@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eco : MonoBehaviour
+public class EcoManager : MonoBehaviour
 {
     RecodActions actionToDo;
     Player player;

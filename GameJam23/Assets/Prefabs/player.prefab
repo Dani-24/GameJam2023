@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3780146136333170470}
   - component: {fileID: 3780146136333170471}
   m_Layer: 0
-  m_Name: WE
+  m_Name: pivot gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 3780146137066160953}
   - component: {fileID: 3780146137066160952}
   - component: {fileID: 3780146137066160958}
-  - component: {fileID: 3780146137066160959}
   - component: {fileID: 3780146137066160956}
   m_Layer: 0
   m_Name: player
@@ -281,22 +280,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 5.1
---- !u!58 &3780146137066160959
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3780146137066160933}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.29
+  lives: 3
+  life: 1
+  startTrans: {fileID: 0}
+  clones: 2
 --- !u!114 &3780146137066160956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3294513771538821734, guid: 998c2ff49ae9b65498438f62043c8bfd, type: 3}
-  bulletVel: 15
+  bulletVel: 20
+  shootDelay: 0.3
 --- !u!1 &3780146137513184006
 GameObject:
   m_ObjectHideFlags: 0
