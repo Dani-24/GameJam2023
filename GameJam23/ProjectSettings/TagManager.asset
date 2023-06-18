@@ -12,6 +12,7 @@ TagManager:
   - EcoGun
   - EnemyBullet
   - EnemyShield
+  - LevelManager
   layers:
   - Default
   - TransparentFX
