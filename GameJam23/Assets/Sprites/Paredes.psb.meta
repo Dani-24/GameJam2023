@@ -30,7 +30,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -47,12 +47,12 @@ ScriptedImporter:
     flipbookRows: 0
     flipbookColumns: 0
     ignorePngGamma: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
     normalMap: 0
     textureFormat: 0
     maxTextureSize: 0
@@ -91,60 +91,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Muro lineas
+  - name: Paredes_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 569
-      y: 4
-      width: 217
-      height: 351
-    spriteID: 30ba816baa67f8548a3091293a31dfb1
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -352, y: -1537}
-  - name: Muro v inversa
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 794
-      y: 4
-      width: 217
-      height: 351
-    spriteID: b3e0fab523bccbd4e8b006495d7b2b91
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 126, y: -1536}
-  - name: Muro tornillos
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 568
-      width: 217
-      height: 351
-    spriteID: 18ae36e09f9bbb741afd58a4ebfab806
+      y: 1711
+      width: 366
+      height: 208
+    spriteID: 8742f5cb191c7474f9674481f55df2e9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,19 +111,40 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -409, y: -971}
-  - name: Muro blanco
+    uvTransform: {x: 4, y: 1711}
+  - name: Paredes_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 1913
+      width: 106
+      height: 106
+    spriteID: a1fc79eea67759441b0ac22d96157809
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 1913}
+  - name: Paredes_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 229
-      y: 568
-      width: 217
-      height: 351
-    spriteID: d449f612f3e1535419eea46c36983a3b
+      x: 1339
+      y: 1666
+      width: 111
+      height: 377
+    spriteID: 37baafc29c9c18c4585b2366555cfa58
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -174,19 +153,145 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 62, y: -965}
-  - name: Interseccion
+    uvTransform: {x: 1339, y: 1666}
+  - name: Paredes_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1458
+      y: 1666
+      width: 111
+      height: 377
+    spriteID: e6cb618b142f16c4f898e69640c7f8ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1458, y: 1666}
+  - name: Paredes_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1577
+      y: 1666
+      width: 111
+      height: 376
+    spriteID: ebd76db866613fa41a472cb5173b850c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1577, y: 1666}
+  - name: Paredes_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 378
+      y: 1711
+      width: 111
+      height: 108
+    spriteID: 37d94717ab5744f4c9d3203ccf5a1978
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 378, y: 1711}
+  - name: Paredes_6
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 1706
+      width: 364
+      height: 207
+    spriteID: 794564a5527d0244da46cb728c48819b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 562, y: 1706}
+  - name: Paredes_7
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 934
+      y: 1705
+      width: 106
+      height: 106
+    spriteID: d69529432a7702d4c97bb644952298ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 934, y: 1705}
+  - name: Paredes_8
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 1799
+      width: 106
+      height: 106
+    spriteID: ae628971ce1e6484c96f63d28d895177
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 1799}
+  - name: Paredes_9
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 557
-      height: 556
-    spriteID: f0e9cbd09b3213b459518ec428a05867
+      y: 1495
+      width: 365
+      height: 207
+    spriteID: 1de5f5a7d5669f74796a3a56a1f6a9cb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -195,7 +300,553 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1218, y: -1324}
+    uvTransform: {x: 4, y: 1495}
+  - name: Paredes_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 378
+      y: 1494
+      width: 111
+      height: 112
+    spriteID: 8f26274415040414d933229f3cc87c42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 378, y: 1494}
+  - name: Paredes_11
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 1489
+      width: 363
+      height: 208
+    spriteID: 6b0ace8deb1e5d9418756eeaa2007e34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 562, y: 1489}
+  - name: Paredes_12
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 936
+      y: 1488
+      width: 106
+      height: 106
+    spriteID: d310a263c41f6804cbceee4101e807d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 936, y: 1488}
+  - name: Paredes_13
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 1441
+      width: 209
+      height: 349
+    spriteID: b3f60ad72f5aa5d48b962364db9917c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 1441}
+  - name: Paredes_14
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 1306
+      width: 208
+      height: 351
+    spriteID: d263215e2e4bbb143aa2ae31ef4e899d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 1306}
+  - name: Paredes_15
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1557
+      y: 1306
+      width: 208
+      height: 351
+    spriteID: 4a77e5c1ef3d8c245809879a2836201e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1557, y: 1306}
+  - name: Paredes_16
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1774
+      y: 1306
+      width: 207
+      height: 351
+    spriteID: f041cf66962e24346afbe7c2239d78cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1774, y: 1306}
+  - name: Paredes_17
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5
+      y: 1120
+      width: 208
+      height: 366
+    spriteID: 487050529354ff449976cfef5e0c1e6a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 5, y: 1120}
+  - name: Paredes_18
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 222
+      y: 1120
+      width: 207
+      height: 365
+    spriteID: a0b80148014ebd64bb850e78df6ffbba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 222, y: 1120}
+  - name: Paredes_19
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 1115
+      width: 207
+      height: 365
+    spriteID: 0a23d4e6c35d1bf468bafd31fd5b1c5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 562, y: 1115}
+  - name: Paredes_20
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 779
+      y: 1115
+      width: 207
+      height: 365
+    spriteID: 2d7b52af72d3d724ab62fb7ae3915e6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 779, y: 1115}
+  - name: Paredes_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 997
+      y: 1117
+      width: 111
+      height: 318
+    spriteID: 48c5ff13880d46a4ea7d0534c6941643
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 997, y: 1117}
+  - name: Paredes_22
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 1082
+      width: 209
+      height: 350
+    spriteID: 833a4891c476b2c42ae9b6169c2cfb3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 1082}
+  - name: Paredes_23
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 1090
+      width: 351
+      height: 207
+    spriteID: 1e0c9d5c800b8464590dbaa3c05b988d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 1090}
+  - name: Paredes_24
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 563
+      width: 549
+      height: 548
+    spriteID: c8a6c74de4e4a3341a8947ee058d8ae6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 563}
+  - name: Paredes_25
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 562
+      width: 548
+      height: 545
+    spriteID: 94268e3a2587b4149968b741e20c76ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 562, y: 562}
+  - name: Paredes_26
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 723
+      width: 209
+      height: 350
+    spriteID: 8e3752e1844bc1340b0cade1b5ce1348
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 723}
+  - name: Paredes_27
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 873
+      width: 351
+      height: 208
+    spriteID: 8d92a08aaa67fca4ba563b2d9a50b52f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 873}
+  - name: Paredes_28
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 363
+      width: 210
+      height: 350
+    spriteID: 7cbe772ce0ebfbb419573e6f1f144715
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 363}
+  - name: Paredes_29
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 655
+      width: 351
+      height: 208
+    spriteID: 8848951c3277f8b40abf5529babd8eca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 655}
+  - name: Paredes_30
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5
+      width: 549
+      height: 548
+    spriteID: 53e9b9b2e5ef01f4db69c7ae4922ce5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 5}
+  - name: Paredes_31
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 4
+      width: 548
+      height: 549
+    spriteID: 7dad081ae7bc24049ad760408e17f4e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 562, y: 4}
+  - name: Paredes_32
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 439
+      width: 350
+      height: 207
+    spriteID: 143d7410f8ac8d641b61410a1300830e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 439}
+  - name: Paredes_33
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1119
+      y: 4
+      width: 212
+      height: 350
+    spriteID: 4e8af11bb41d89c41b5a3bbad58b1cd1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1119, y: 4}
+  - name: Paredes_34
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 222
+      width: 350
+      height: 207
+    spriteID: 161d4e8fb1b4b454fb529a1fd9a11616
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 222}
+  - name: Paredes_35
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1339
+      y: 5
+      width: 350
+      height: 208
+    spriteID: e4af2fdef094a444eb799b21e946aa3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1339, y: 5}
   characterData:
     bones: []
     parts: []
@@ -209,7 +860,40 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -226,11 +910,271 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Muro copia 3
+  - name: Muros
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: d8fbf905aa9ead942af4d5882f960c03
+    spriteID: 8d9a1144b5e08f14a91c95eb767dcc6d
+    layerID: 106
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Muro final arriba
+    spriteName: Muro final arriba
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7d68dc6f5ed192f4aa136b0c7a26f834
+    layerID: 123
+    mosaicPosition: {x: 378, y: 1494}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro vertical
+    spriteName: Muro vertical
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 457141cb3b4d9424cb72cebba10db3a0
+    layerID: 87
+    mosaicPosition: {x: 378, y: 1711}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro en T
+    spriteName: Muro en T
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 25500cce29241cc49b477986a63f0f06
+    layerID: 92
+    mosaicPosition: {x: 1339, y: 1665}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro en L inv
+    spriteName: Muro en L inv
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a6303e150ce5adb41a22c214758266b9
+    layerID: 90
+    mosaicPosition: {x: 1458, y: 1665}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro en L
+    spriteName: Muro en L
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 59b0cc92e604f754eb8af8c411597993
+    layerID: 88
+    mosaicPosition: {x: 1577, y: 1665}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro final D
+    spriteName: Muro final D
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b0348f578b76e484590126519d4e0d38
+    layerID: 93
+    mosaicPosition: {x: 1119, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro final I
+    spriteName: Muro final I
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fd947bfbfa560d24d8a41dcfc0605430
+    layerID: 89
+    mosaicPosition: {x: 1119, y: 363}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro con profundidad copia 3
+    spriteName: Muro con profundidad copia 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8fd6b0c54026d104580f7e956e9e7190
+    layerID: 141
+    mosaicPosition: {x: 561, y: 1115}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro lineas copia 3
+    spriteName: Muro lineas copia 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 003d6de1647a88c4681833f1890adc6b
+    layerID: 140
+    mosaicPosition: {x: 1119, y: 722}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro v inversa copia 3
+    spriteName: Muro v inversa copia 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9ede794376de3af46a8ac88ccdb06a69
+    layerID: 139
+    mosaicPosition: {x: 4, y: 1120}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro tornillos copia 3
+    spriteName: Muro tornillos copia 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c7212220b9ada7147a3a6358984ae902
+    layerID: 138
+    mosaicPosition: {x: 1119, y: 1081}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro blanco copia 3
+    spriteName: Muro blanco copia 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 99d9ace659abd9c449433b1434c11749
+    layerID: 137
+    mosaicPosition: {x: 1119, y: 1440}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro con profundidad copia 2
+    spriteName: Muro con profundidad copia 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 31cd34231132b6942bce9144b167efa0
+    layerID: 136
+    mosaicPosition: {x: 561, y: 1488}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro lineas copia 2
+    spriteName: Muro lineas copia 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3389381da6ea5664c9c8cfd854ebc179
+    layerID: 135
+    mosaicPosition: {x: 1339, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro v inversa copia 2
+    spriteName: Muro v inversa copia 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 04d50215551e737419262e36529881c8
+    layerID: 134
+    mosaicPosition: {x: 4, y: 1494}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro tornillos copia 2
+    spriteName: Muro tornillos copia 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: bf87a8f8e385286479be479ec27661be
+    layerID: 133
+    mosaicPosition: {x: 1339, y: 221}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro blanco copia 2
+    spriteName: Muro blanco copia 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a71d4858a1edc0b4a9136629f5d8774d
+    layerID: 132
+    mosaicPosition: {x: 1339, y: 438}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro con profundidad copia
+    spriteName: Muro con profundidad copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 03ab304ed418acf4b911a9b5063f5f05
+    layerID: 131
+    mosaicPosition: {x: 561, y: 1705}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro lineas copia
+    spriteName: Muro lineas copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c0a4737f51df1a345890a4352c12be43
+    layerID: 130
+    mosaicPosition: {x: 1339, y: 655}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro v inversa copia
+    spriteName: Muro v inversa copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f9fad3d438dde534bade0afd272601f3
+    layerID: 129
+    mosaicPosition: {x: 4, y: 1711}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro tornillos copia
+    spriteName: Muro tornillos copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7da66a1879bb7bc4aa4196c1c474a088
+    layerID: 128
+    mosaicPosition: {x: 1339, y: 872}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro blanco copia
+    spriteName: Muro blanco copia
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 2c01d76d0aa681241b045c56ada1483b
+    layerID: 127
+    mosaicPosition: {x: 1339, y: 1089}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro con profundidad
+    spriteName: Muro con profundidad
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ec2b048911236d24286d4214019e1192
+    layerID: 94
+    mosaicPosition: {x: 778, y: 1115}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muropalo
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 57fc690372872c4468612533cccb86f9
+    layerID: 83
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Muro final abajo
+    spriteName: Muro final abajo
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 81655b5b740de914aae679b8f4a15abc
+    layerID: 82
+    mosaicPosition: {x: 995, y: 1115}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Muro copia 3
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 21fdfe39be308f04b9a26b9b9ffa8d23
     layerID: 65
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -239,18 +1183,18 @@ ScriptedImporter:
   - name: Muro lineas
     spriteName: Muro lineas
     isGroup: 0
-    parentIndex: 0
-    spriteID: 30ba816baa67f8548a3091293a31dfb1
+    parentIndex: 26
+    spriteID: 2808e701220547048befe90e7a288531
     layerID: 27
-    mosaicPosition: {x: 569, y: 4}
+    mosaicPosition: {x: 1339, y: 1306}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Muro copia 2
     spriteName: 
     isGroup: 1
-    parentIndex: -1
-    spriteID: 3950b6c1b73f58a47b14e7a91b2f67e0
+    parentIndex: 0
+    spriteID: 803e4996a2ff6ac4491cb0f0b68e52d6
     layerID: 61
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -259,18 +1203,18 @@ ScriptedImporter:
   - name: Muro v inversa
     spriteName: Muro v inversa
     isGroup: 0
-    parentIndex: 2
-    spriteID: b3e0fab523bccbd4e8b006495d7b2b91
+    parentIndex: 28
+    spriteID: 05f547a8c31f8e74189cc679cc02b212
     layerID: 33
-    mosaicPosition: {x: 794, y: 4}
+    mosaicPosition: {x: 221, y: 1120}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Muro copia 1
     spriteName: 
     isGroup: 1
-    parentIndex: -1
-    spriteID: 19dc5947b89284b49b50ad4f0035ad23
+    parentIndex: 0
+    spriteID: 357f9e201a412f64f904a40bd5ad90ab
     layerID: 52
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -279,18 +1223,18 @@ ScriptedImporter:
   - name: Muro tornillos
     spriteName: Muro tornillos
     isGroup: 0
-    parentIndex: 4
-    spriteID: 18ae36e09f9bbb741afd58a4ebfab806
+    parentIndex: 30
+    spriteID: bedfed353d8c0b04d80a1847b36b4676
     layerID: 25
-    mosaicPosition: {x: 4, y: 568}
+    mosaicPosition: {x: 1556, y: 1306}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Muro copia
     spriteName: 
     isGroup: 1
-    parentIndex: -1
-    spriteID: 7b9b0ffd17568c946ae31affdf44388b
+    parentIndex: 0
+    spriteID: 5d646f805a890db4d9d991cbb9ec925a
     layerID: 57
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -299,30 +1243,110 @@ ScriptedImporter:
   - name: Muro blanco
     spriteName: Muro blanco
     isGroup: 0
-    parentIndex: 6
-    spriteID: d449f612f3e1535419eea46c36983a3b
+    parentIndex: 32
+    spriteID: a7afbb70736ed614fad843075e46725f
     layerID: 56
-    mosaicPosition: {x: 229, y: 568}
+    mosaicPosition: {x: 1773, y: 1306}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Muro esquina
     spriteName: 
     isGroup: 1
-    parentIndex: -1
-    spriteID: cac916e436621fa419c74d112e0990b7
+    parentIndex: 0
+    spriteID: d492a398366633a45b4ad62bd781eec0
     layerID: 67
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 1
+  - name: Interseccion copia 3
+    spriteName: Interseccion copia 3
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 8bfb0b99b61051d429faecc81b0a1c73
+    layerID: 126
+    mosaicPosition: {x: 561, y: 561}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Interseccion copia 2
+    spriteName: Interseccion copia 2
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 0850dd07283aae64d91f71ec257bdc7f
+    layerID: 125
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Interseccion copia
+    spriteName: Interseccion copia
+    isGroup: 0
+    parentIndex: 34
+    spriteID: b529233673ac35a4696f2e5ac035b190
+    layerID: 124
+    mosaicPosition: {x: 561, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Interseccion
     spriteName: Interseccion
     isGroup: 0
-    parentIndex: 8
-    spriteID: f0e9cbd09b3213b459518ec428a05867
+    parentIndex: 34
+    spriteID: ab4d98850b0d87349926f68066d2fc9c
     layerID: 44
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 562}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Suelos
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: c363f96399fd66c4194910c75930f599
+    layerID: 121
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Suelo
+    spriteName: Suelo
+    isGroup: 0
+    parentIndex: 39
+    spriteID: d18442d801c83da4aa71f0cba6707ab9
+    layerID: 116
+    mosaicPosition: {x: 934, y: 1488}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Suelo tornillos
+    spriteName: Suelo tornillos
+    isGroup: 0
+    parentIndex: 39
+    spriteID: 04f841dc61c8ad14e9e9f695081b9e14
+    layerID: 115
+    mosaicPosition: {x: 934, y: 1705}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Suelo Alcantarilla
+    spriteName: Suelo Alcantarilla
+    isGroup: 0
+    parentIndex: 39
+    spriteID: 7c2e98bc1a35a62449dd51049a9a7488
+    layerID: 102
+    mosaicPosition: {x: 1119, y: 1799}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "Suelo N\xA1Nisaico"
+    spriteName: "Suelo N\xA1Nisaico"
+    isGroup: 0
+    parentIndex: 39
+    spriteID: b5f3e9a0d72941b4cb41b1df93cbdbc5
+    layerID: 119
+    mosaicPosition: {x: 1119, y: 1913}
     flatten: 0
     isImported: 1
     isVisible: 1
