@@ -5,44 +5,72 @@ using UnityEngine;
 public class PlayerEco : MonoBehaviour
 {
     List<PlayerEcoActions> actionsEco;
+    List<PlayerEcoActions> actionsEcoCpy;//Copy
     RecodActions playerActions;
-    Player playerGO;
+   //Player playerGO;
     Quaternion gunRotZ;
     [SerializeField] private float disapearTime = 2f;
     private float _disapearDt = 0;
+    [SerializeField] private int actions;
+    Player playerSc;
     // Start is called before the first frame update
     void Start()
     {
-        playerGO = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        playerActions = GameObject.FindGameObjectWithTag("Player").GetComponent<RecodActions>();
-        playerActions.CloneActions(actionsEco);
-        
+        playerSc = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerActions = playerSc.GetComponent<RecodActions>();
+        //actionsEco = playerActions.CloneActions();
+        actionsEco = new List<PlayerEcoActions>(playerActions.CloneActions());
+        playerActions.ClearActions();
+        actionsEcoCpy = actionsEco ;
 
+        actions = actionsEcoCpy.Count; 
 
-    } 
-
+    }
+    
     // Update is called once per frame
     void Update()
     {
-      
-    }
-
-    private void FixedUpdate()
-    {
-        if(actionsEco.Count>0)
+        //if(playerSc.isRedo)
+        //{
+        //    DisapearEco();
+        //}
+        if (actionsEco.Count > 0)
         {
             PlayerEcoActions actions = actionsEco[0];
-            transform.position = actions.playerTrans.position;
+            transform.position = actions.playerTrans;
             gameObject.GetComponent<Gun>().SetEcoCanShoot(actions.isShoot);
             gunRotZ = actions.gunRot;
-           // transform.rotation = actions.playerTrans.rotation;
+            actionsEco.RemoveAt(0);
+            // Debug.Log("a");
+            // transform.rotation = actions.playerTrans.rotation;
 
         }
         else
         {
             DisapearEco();
+            Debug.Log("obama");
         }
     }
+
+    //private void FixedUpdate()
+    //{
+    //    if(actionsEco.Count>0)
+    //    {
+    //        PlayerEcoActions actions = actionsEco[0];
+    //        transform.position = actions.playerTrans;
+    //        gameObject.GetComponent<Gun>().SetEcoCanShoot(actions.isShoot);
+    //        gunRotZ = actions.gunRot;
+    //        actionsEco.RemoveAt(0);
+    //       // Debug.Log("a");
+    //       // transform.rotation = actions.playerTrans.rotation;
+
+    //    }
+    //    else
+    //    {
+    //        DisapearEco();
+    //        Debug.Log("obama");
+    //    }
+    //}
 
   
     public Quaternion GetGunRotZ()
@@ -55,11 +83,18 @@ public class PlayerEco : MonoBehaviour
         _disapearDt += Time.deltaTime;
         if(_disapearDt>=disapearTime)
         {
-
-
-            Destroy(gameObject);
+            _disapearDt = 0;
+            gameObject.SetActive(false);
+           // RestartEcoPos();
+            //Destroy(gameObject);
         }
 
 
+    }
+    public void RestartEcoPos()
+    {
+        Debug.Log("aaaa");
+       // gameObject.SetActive(true);
+        actionsEco = actionsEcoCpy;
     }
 }

@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class PlayerEcoActions 
 {
-    public Transform playerTrans;
-    public Transform gunTrans;
+    public Vector3 playerTrans;
     public Quaternion gunRot;
-    public Gun gunAction;
     public bool isShoot = false;
-     public PlayerEcoActions (Transform _playerTrans, Transform _gunTrans, bool _isShoot)
+   // public Quaternion gunTrans;
+   // public Gun gunAction;
+     public PlayerEcoActions (Vector3 _playerPos, Quaternion _gunRot, bool _isShoot)
     {
-        this.playerTrans = _playerTrans;
-       // this.gunAction = _gunAction;
-        this.gunTrans = _gunTrans;
-        this.gunRot = _gunTrans.rotation;
+        this.playerTrans = _playerPos;
+        this.gunRot = _gunRot;
         this.isShoot = _isShoot;
+       // this.gunAction = _gunAction;
+       // this.gunTrans = _gunTrans;
     }
 
 }

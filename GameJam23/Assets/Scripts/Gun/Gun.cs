@@ -6,22 +6,24 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVel = 15f;
-    private Transform bulletSpawn;
+    [SerializeField] private Transform bulletSpawn;
     private float  _shootDt = 0f;
     [SerializeField] private float shootDelay = 0.3f;
 
     private bool isShooting = false;
     private bool ecoCanShoot = false;
+    Player playerSc;
     void Start()
     {
-        bulletSpawn = GameObject.FindGameObjectWithTag("Gun").transform;
+        //  bulletSpawn = GameObject.FindGameObjectWithTag("Gun").transform;
+       if(gameObject.CompareTag("Player")) playerSc = gameObject.GetComponent<Player>();
     }
 
     void Update()
     {
         _shootDt += Time.deltaTime;
         isShooting = false;
-        if(Input.GetKeyDown(KeyCode.Mouse0) || ecoCanShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && playerSc && !playerSc.isRedo || ecoCanShoot && gameObject.CompareTag("Eco"))
         {
             if (_shootDt >= shootDelay)
             {
@@ -30,7 +32,7 @@ public class Gun : MonoBehaviour
                 isShooting = true;
                 ecoCanShoot = false;
             }
-           
+
         }
     }
 
