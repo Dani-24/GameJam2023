@@ -51,9 +51,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layout
-    uniqueID: 2760502209
+  - name: Scenery
+    uniqueID: 3512653771
     locked: 0
-  - name: 
+  - name: Objects
+    uniqueID: 3382096691
+    locked: 0
+  - name: Enemies
+    uniqueID: 4095533865
+    locked: 0
+  - name: Player
+    uniqueID: 4153153337
+    locked: 0
+  - name: UI
     uniqueID: 3135699413
     locked: 0
