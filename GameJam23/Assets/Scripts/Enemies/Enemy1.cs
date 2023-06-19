@@ -79,8 +79,6 @@ public class Enemy1 : MonoBehaviour
 
     private void Start()
     {
-        
-
         flippedScale = originalScale = transform.localScale;
         flippedScale.x *= -1;
 
@@ -161,29 +159,36 @@ public class Enemy1 : MonoBehaviour
         }
         else if(movementType == MovTypes.Patrol)
         {
-            float dist = Vector2.Distance(transform.position, currentCheckpoint.position);
-
-            // Cambiar Checkpoint
-            if(dist < 0.5f)
+            if (currentState == EnemyStates.Idle)
             {
-                for(int i = 0; i < patrolCheckpoints.Count; i++)
+                float dist = Vector2.Distance(transform.position, currentCheckpoint.position);
+
+                // Cambiar Checkpoint
+                if (dist < 0.5f)
                 {
-                    if (patrolCheckpoints[i] == currentCheckpoint)
+                    for (int i = 0; i < patrolCheckpoints.Count; i++)
                     {
-                        if (i != patrolCheckpoints.Count - 1)
+                        if (patrolCheckpoints[i] == currentCheckpoint)
                         {
-                            currentCheckpoint = patrolCheckpoints[i + 1];
-                            break;
-                        }
-                        else
-                        {
-                            currentCheckpoint = patrolCheckpoints[0];
-                            break;
+                            if (i != patrolCheckpoints.Count - 1)
+                            {
+                                currentCheckpoint = patrolCheckpoints[i + 1];
+                                break;
+                            }
+                            else
+                            {
+                                currentCheckpoint = patrolCheckpoints[0];
+                                break;
+                            }
                         }
                     }
                 }
+                MoveToThis(currentCheckpoint.transform);
             }
-            MoveToThis(currentCheckpoint.transform);
+            else
+            {
+                if (currentlyTargeting != null) MoveToThis(currentlyTargeting.transform);
+            }
         }
 
         // Que el enemigo mire a donde se mueve
