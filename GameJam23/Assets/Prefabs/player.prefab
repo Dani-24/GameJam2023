@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3780146136333170471}
   m_Layer: 0
   m_Name: pivot gun
-  m_TagString: Untagged
+  m_TagString: PlayerGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f823fd2f7b21f624386b762c671ec561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mousePos: {x: 0, y: 0}
 --- !u!1 &3780146136385185584
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +146,7 @@ GameObject:
   - component: {fileID: 3780146137066160952}
   - component: {fileID: 3780146137066160958}
   - component: {fileID: 3780146137066160956}
+  - component: {fileID: 1859523201}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -284,6 +286,8 @@ MonoBehaviour:
   life: 1
   startTrans: {fileID: 0}
   clones: 2
+  isRedo: 0
+  endRedo: 0
 --- !u!114 &3780146137066160956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +302,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3294513771538821734, guid: 998c2ff49ae9b65498438f62043c8bfd, type: 3}
   bulletVel: 20
+  bulletSpawn: {fileID: 3780146137585737091}
   shootDelay: 0.3
+--- !u!114 &1859523201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780146137066160933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c619d3faa1faf4682bc731ec428deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3780146137513184006
 GameObject:
   m_ObjectHideFlags: 0
