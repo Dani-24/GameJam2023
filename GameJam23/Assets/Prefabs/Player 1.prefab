@@ -71,10 +71,10 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -141813959
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Time: 0.9
+  m_Time: 0.8
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -104,23 +104,23 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 21395
-      ctime2: 36815
-      ctime3: 44140
+      ctime1: 18504
+      ctime2: 36623
+      ctime3: 54548
       ctime4: 65535
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 35081
-      atime2: 65535
+      atime1: 15613
+      atime2: 64957
       atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 5
+      m_NumColorKeys: 4
       m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
