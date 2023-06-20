@@ -77,6 +77,8 @@ public class Enemy1 : MonoBehaviour
     [SerializeField]
     GameObject shootLBot;
 
+    Player playerScript;
+
     private void Start()
     {
         flippedScale = originalScale = transform.localScale;
@@ -91,6 +93,8 @@ public class Enemy1 : MonoBehaviour
 
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         if(patrolCheckpoints.Count > 0 && movementType == MovTypes.Patrol)
         {
@@ -123,99 +127,117 @@ public class Enemy1 : MonoBehaviour
 
     void Update()
     {
-        if (HP <= 0)
+        if (!playerScript.isRedo)
         {
-            currentState = EnemyStates.Dead;
-
-            DieParticleSystem.Play();
-            animator.SetTrigger("die");
-            Destroy(this.transform.parent.gameObject, 1);
-        }
-        else if (currentlyTargeting != null)
-        {
-            if (actualShootingCooldown > 0)
+            if (HP <= 0)
             {
-                currentState = EnemyStates.Chasing;
-                animator.SetBool("idle", false);
+                currentState = EnemyStates.Dead;
 
-                actualShootingCooldown -= Time.deltaTime;
+                DieParticleSystem.Play();
+                animator.SetTrigger("die");
+            }
+            else if (currentlyTargeting != null)
+            {
+                if (actualShootingCooldown > 0)
+                {
+                    currentState = EnemyStates.Chasing;
+                    animator.SetBool("idle", false);
+
+                    actualShootingCooldown -= Time.deltaTime;
+                }
+                else
+                {
+                    EnemyShoot();
+                }
+
+                if (shieldDirection == ShieldDirection.Aiming)
+                {
+                    Vector2 lookDir = currentlyTargeting.transform.position - transform.position;
+                    float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 180f;
+                    ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, rotZ);
+                }
             }
             else
             {
-                EnemyShoot();
+                currentState = EnemyStates.Idle;
+                animator.SetBool("idle", true);
             }
-
-            if (shieldDirection == ShieldDirection.Aiming)
-            {
-                Vector2 lookDir = currentlyTargeting.transform.position - transform.position;
-                float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 180f;
-                ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, rotZ);
-            }
-        }
-        else { 
-            currentState = EnemyStates.Idle;
-            animator.SetBool("idle", true);
         }
     }
 
     private void FixedUpdate()
     {
-        // Movimiento Enemigo ===
+        if (!playerScript.isRedo)
+        {
+            // Movimiento Enemigo ===
 
-        if (currentState == EnemyStates.Chasing && movementType == MovTypes.Wander) 
-        {
-            MoveToThis(currentlyTargeting.transform);
-        }
-        else if(movementType == MovTypes.Patrol)
-        {
-            if (currentState == EnemyStates.Idle)
+            if (currentState == EnemyStates.Chasing && movementType == MovTypes.Wander)
             {
-                float dist = Vector2.Distance(transform.position, currentCheckpoint.position);
-
-                // Cambiar Checkpoint
-                if (dist < 0.5f)
+                MoveToThis(currentlyTargeting.transform);
+            }
+            else if (movementType == MovTypes.Patrol)
+            {
+                if (currentState == EnemyStates.Idle)
                 {
-                    for (int i = 0; i < patrolCheckpoints.Count; i++)
+                    float dist = Vector2.Distance(transform.position, currentCheckpoint.position);
+
+                    // Cambiar Checkpoint
+                    if (dist < 0.5f)
                     {
-                        if (patrolCheckpoints[i] == currentCheckpoint)
+                        for (int i = 0; i < patrolCheckpoints.Count; i++)
                         {
-                            if (i != patrolCheckpoints.Count - 1)
+                            if (patrolCheckpoints[i] == currentCheckpoint)
                             {
-                                currentCheckpoint = patrolCheckpoints[i + 1];
-                                break;
-                            }
-                            else
-                            {
-                                currentCheckpoint = patrolCheckpoints[0];
-                                break;
+                                if (i != patrolCheckpoints.Count - 1)
+                                {
+                                    currentCheckpoint = patrolCheckpoints[i + 1];
+                                    break;
+                                }
+                                else
+                                {
+                                    currentCheckpoint = patrolCheckpoints[0];
+                                    break;
+                                }
                             }
                         }
                     }
+                    MoveToThis(currentCheckpoint.transform);
                 }
-                MoveToThis(currentCheckpoint.transform);
+                else
+                {
+                    if (currentlyTargeting != null) MoveToThis(currentlyTargeting.transform);
+                }
             }
-            else
-            {
-                if (currentlyTargeting != null) MoveToThis(currentlyTargeting.transform);
-            }
-        }
 
-        // Que el enemigo mire a donde se mueve
-        if (rb.velocity.x != 0 && movementType != MovTypes.Fixed)
-        {
-            if (rb.velocity.x < 0)
+            // Que el enemigo mire a donde se mueve
+            if (rb.velocity.x != 0 && movementType != MovTypes.Fixed)
             {
-                transform.localScale = originalScale;
+                if (rb.velocity.x < 0)
+                {
+                    transform.localScale = originalScale;
+                }
+                else
+                {
+                    transform.localScale = flippedScale;
+                }
             }
-            else
-            {
-                transform.localScale = flippedScale;
-            }
-        }
 
-        // Update Posición del Shield y del area de detección
-        ShieldGameObject.transform.position = transform.position;
-        DetectionAreaTransform.position = transform.position;
+            if (movementType == MovTypes.Stationary && currentlyTargeting != null)
+            {
+                if ((currentlyTargeting.transform.position.x < transform.position.x))
+                {
+                    transform.localScale = originalScale;
+                }
+                else
+                {
+                    transform.localScale = flippedScale;
+                }
+            }
+
+            // Update Posición del Shield y del area de detección
+            ShieldGameObject.transform.position = transform.position;
+            DetectionAreaTransform.position = transform.position;
+        }
     }
 
     // Movimiento
@@ -297,6 +319,11 @@ public class Enemy1 : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void DeactivateEnemy()
+    {
+        this.transform.parent.gameObject.SetActive(false);
     }
 
     // ESTADOS DEL BICHO ========

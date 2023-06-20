@@ -7,9 +7,21 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     List<string> CollideWithTheseTags = new List<string>();
 
+    Player playerScript;
+
     private void Start()
     {
         Destroy(this.gameObject, 5f);
+
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    private void Update()
+    {
+        if (playerScript.isRedo)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

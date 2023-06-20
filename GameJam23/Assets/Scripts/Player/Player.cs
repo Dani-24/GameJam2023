@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     Vector2 playerInput;
     Vector2 mousePos;
     //List<PlayerEcoActions> actionsList;
+
+    [SerializeField]
+    List<string> dieByTheseTags = new List<string>();
+
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
@@ -64,6 +68,8 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        Debug.Log("Furro q veo Furro q pateo");
+
         life -= dmg;
         lives -= 1;
         if(life<=0 )
@@ -163,5 +169,29 @@ public class Player : MonoBehaviour
     public Vector2 GetMousePos()
     {
         return mousePos;
+    }
+
+    // --- Detectar Collisiones q pegan al player ---
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        foreach(var tag in dieByTheseTags)
+        {
+            if(collision.gameObject.tag == tag)
+            {
+                TakeDamage(1);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        foreach (var tag in dieByTheseTags)
+        {
+            if (collision.tag == tag)
+            {
+                TakeDamage(1);
+            }
+        }
     }
 }
