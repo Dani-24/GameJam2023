@@ -23,7 +23,7 @@ public class MouseAim : MonoBehaviour
         }
         if(gameObject.tag=="EcoGun")
         {
-            ecoAim = transform.parent.gameObject.GetComponent<PlayerEco>();
+            ecoAim = transform.parent.parent.gameObject.GetComponent<PlayerEco>();
         }
     }
 
