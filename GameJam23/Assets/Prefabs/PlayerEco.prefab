@@ -7559,7 +7559,8 @@ GameObject:
   - component: {fileID: 4872170629572705752}
   - component: {fileID: 4872170629572705756}
   - component: {fileID: 1678747013009094068}
-  m_Layer: 8
+  - component: {fileID: -4882537778966018963}
+  m_Layer: 0
   m_Name: PlayerEco
   m_TagString: Eco
   m_Icon: {fileID: 0}
@@ -7655,6 +7656,27 @@ MonoBehaviour:
   disapearTime: 2
   actions: 0
   disapearParticle: {fileID: 398698892}
+--- !u!50 &-4882537778966018963
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872170629572705754}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4872170629626017452
 GameObject:
   m_ObjectHideFlags: 0
