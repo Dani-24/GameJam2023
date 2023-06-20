@@ -13,6 +13,7 @@ public class RecodActions : MonoBehaviour
     //bool isRecording;
     bool canRedcord = true;
     GameObject playerGun;
+    [SerializeField] private MouseAim mousePos;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +68,10 @@ public class RecodActions : MonoBehaviour
     }
     private void InSertOnList()
     {
-        actionsList.Add( new PlayerEcoActions(playerSc.transform.position, playerGun.transform.rotation, gunSc.GetIsShooting()));
+        Vector2 _input;
+        _input.x = Input.GetAxis("Horizontal");
+        _input.y = Input.GetAxis("Vertical");
+        actionsList.Add( new PlayerEcoActions(playerSc.transform.position, playerGun.transform.rotation, gunSc.GetIsShooting(), mousePos.mousePos,playerSc.GetInputPlayer()));
        // actionsList.Add( new PlayerEcoActions(playerSc.GetPlayerRB().position, playerGun.transform.rotation, gunSc.GetIsShooting()));
     }
 

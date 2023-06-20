@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     List<PlayerEcoActions> redoPlayercpy;
     RecodActions playerActions;
     Quaternion gunRotZ;
+    Vector2 playerInput;
+    Vector2 mousePos;
     //List<PlayerEcoActions> actionsList;
     void Start()
     {
@@ -123,6 +125,8 @@ public class Player : MonoBehaviour
             transform.position = actions.playerTrans;
             //gameObject.GetComponent<Gun>().SetEcoCanShoot(actions.isShoot);
             gunRotZ = actions.gunRot;
+            playerInput = actions.input;
+            mousePos = actions.mousePos;
             redoPlayercpy.RemoveAt(0);
             // Debug.Log("a");
             // transform.rotation = actions.playerTrans.rotation;
@@ -141,5 +145,20 @@ public class Player : MonoBehaviour
     public Quaternion GetPlayerGunRotZ()
     {
         return gunRotZ;
+    }
+    public Vector2 GetPlayerInput()
+    {
+
+        return input;
+    }
+    public Vector2 GetPlayerRedoInput()
+    {
+
+        return playerInput;
+    }
+    
+    public Vector2 GetMousePos()
+    {
+        return mousePos;
     }
 }

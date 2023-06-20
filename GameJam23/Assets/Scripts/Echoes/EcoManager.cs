@@ -7,7 +7,7 @@ public class EcoManager : MonoBehaviour
     RecodActions actionToDo;
     Player player;
     [SerializeField]GameObject ecoPrefab;
-   // List<GameObject> ecoOnScene;
+    List<GameObject> ecoOnScene;
     // Start is called before the first frame update
 
     void Start()
@@ -16,7 +16,7 @@ public class EcoManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         actionToDo = player.GetComponent<RecodActions>();
 
-       // ecoOnScene = new List<GameObject>();
+        ecoOnScene = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -45,17 +45,17 @@ public class EcoManager : MonoBehaviour
             //{
             //    //GameObject.find
             //}
-            //if(ecoOnScene.Count>0)
-            //{
-            //    for (int i = 0; i < ecoOnScene.Count; i++)
-            //    {
-            //        ecoOnScene[i].SetActive(true);
-            //        ecoOnScene[i].GetComponent<PlayerEco>().RestartEcoPos(); 
-            //    }
+            if (ecoOnScene.Count > 0)
+            {
+                for (int i = 0; i < ecoOnScene.Count; i++)
+                {
+                    ecoOnScene[i].SetActive(true);
+                    ecoOnScene[i].GetComponent<PlayerEco>().RestartEcoPos();
+                }
 
-            //}
-            
-           // ecoOnScene.Add(newEco); 
+            }
+
+            ecoOnScene.Add(newEco);
         }
     }
 

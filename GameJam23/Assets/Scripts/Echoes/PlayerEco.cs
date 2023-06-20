@@ -13,6 +13,8 @@ public class PlayerEco : MonoBehaviour
     private float _disapearDt = 0;
     [SerializeField] private int actions;
     Player playerSc;
+    Vector2 playerInputEco;
+    Vector2 mousePosEco;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,8 @@ public class PlayerEco : MonoBehaviour
         playerActions = playerSc.GetComponent<RecodActions>();
         //actionsEco = playerActions.CloneActions();
         actionsEco = new List<PlayerEcoActions>(playerActions.CloneActions());
+        actionsEcoCpy = new List<PlayerEcoActions>(playerActions.CloneActions()); ;
         playerActions.ClearActions();
-        actionsEcoCpy = actionsEco ;
 
         actions = actionsEcoCpy.Count; 
 
@@ -40,6 +42,8 @@ public class PlayerEco : MonoBehaviour
             transform.position = actions.playerTrans;
             gameObject.GetComponent<Gun>().SetEcoCanShoot(actions.isShoot);
             gunRotZ = actions.gunRot;
+            playerInputEco = actions.input;
+            mousePosEco = actions.mousePos;
             actionsEco.RemoveAt(0);
             // Debug.Log("a");
             // transform.rotation = actions.playerTrans.rotation;
@@ -94,7 +98,19 @@ public class PlayerEco : MonoBehaviour
     public void RestartEcoPos()
     {
         Debug.Log("aaaa");
-       // gameObject.SetActive(true);
-        actionsEco = actionsEcoCpy;
+        // gameObject.SetActive(true);
+        actionsEco.Clear();
+        actionsEco = new List<PlayerEcoActions>(actionsEcoCpy);
     }
+    public Vector2 GetPlayerInputEco()
+    {
+
+        return playerInputEco;
+    }
+
+    public Vector2 GetMousePosEco()
+    {
+        return mousePosEco;
+    }
+
 }

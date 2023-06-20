@@ -63,6 +63,7 @@ public class MouseAim : MonoBehaviour
             if (playerSc.isRedo)
             {
                 transform.rotation = playerSc.GetPlayerGunRotZ();
+                
             }
         }
     }
