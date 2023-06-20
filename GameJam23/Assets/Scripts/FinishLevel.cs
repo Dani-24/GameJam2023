@@ -10,7 +10,12 @@ public class FinishLevel : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            transitions.GetComponent<Animator>().SetTrigger("fade_out");
+            EndLevel();
         }
+    }
+
+    public void EndLevel()
+    {
+        transitions.GetComponent<Animator>().SetTrigger("fade_out");
     }
 }

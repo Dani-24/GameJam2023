@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
 
     public List<string> dieByTheseTags = new List<string>();
 
-    GameObject[] EnemiesInThisScene;
+    GameObject[] enemiesInThisScene;
+    GameObject[] interactablesInThisScene;
 
     void Start()
     {
@@ -36,7 +37,8 @@ public class Player : MonoBehaviour
         playerActions = gameObject.GetComponent<RecodActions>();
         starto = startTrans.position;
 
-        EnemiesInThisScene = GameObject.FindGameObjectsWithTag("Enemy");
+        enemiesInThisScene = GameObject.FindGameObjectsWithTag("Enemy");
+        interactablesInThisScene = GameObject.FindGameObjectsWithTag("Interactuable");
     }
 
     // Update is called once per frame
@@ -155,13 +157,20 @@ public class Player : MonoBehaviour
             isMoving = false;
             Debug.Log("obama");
 
-            for(int i = 0; i < EnemiesInThisScene.Length; i++)
+            // Update Enemies
+            for(int i = 0; i < enemiesInThisScene.Length; i++)
             {
-                if (!EnemiesInThisScene[i].transform.parent.gameObject.activeInHierarchy)
+                if (!enemiesInThisScene[i].transform.parent.gameObject.activeInHierarchy)
                 {
-                    EnemiesInThisScene[i].transform.parent.gameObject.SetActive(true);
+                    enemiesInThisScene[i].transform.parent.gameObject.SetActive(true);
                 }
-                EnemiesInThisScene[i].GetComponent<Enemy1>().ActivateEnemy();
+                enemiesInThisScene[i].GetComponent<Enemy1>().ActivateEnemy();
+            }
+
+            // Update Interactables
+            for(int i = 0; i< interactablesInThisScene.Length; i++)
+            {
+                interactablesInThisScene[i].GetComponent<InteractuableItem>().ResetBcLoDigoYo();
             }
         }
     }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlacaPresion : MonoBehaviour
 {
-    InteractuableItem interactiveScrip;
+    InteractuableItem interactiveScript;
 
     [SerializeField]
     List<string> InteractTags = new List<string>();
 
     Animator animator;
 
-    private void Start()
+    void Start()
     {
-        interactiveScrip = GetComponent<InteractuableItem>();
+        interactiveScript = GetComponent<InteractuableItem>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -23,7 +23,7 @@ public class PlacaPresion : MonoBehaviour
         {
             if (collision.CompareTag(tag))
             {
-                interactiveScrip.activated = true;
+                interactiveScript.activated = true;
                 animator.SetTrigger("trigger");
             }
         }
@@ -35,7 +35,7 @@ public class PlacaPresion : MonoBehaviour
         {
             if (collision.CompareTag(tag))
             {
-                interactiveScrip.activated = false;
+                interactiveScript.activated = false;
                 animator.SetTrigger("trigger");
             }
         }

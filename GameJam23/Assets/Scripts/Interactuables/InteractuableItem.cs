@@ -1,1 +1,1 @@
-using UnityEngine; public class InteractuableItem : MonoBehaviour{public bool activated;}
+using UnityEngine; public class InteractuableItem : MonoBehaviour{public bool activated;bool startState;private void Start(){startState = activated;}public void ResetBcLoDigoYo(){if (this.gameObject.GetComponent<Palanca>() && activated != startState){this.gameObject.GetComponent<Palanca>().ResetAnimation(); activated = startState; } }}

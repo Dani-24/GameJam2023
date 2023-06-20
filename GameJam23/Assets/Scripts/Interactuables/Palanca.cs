@@ -5,7 +5,7 @@ using UnityEngine.PlayerLoop;
 
 public class Palanca : MonoBehaviour
 {
-    InteractuableItem interactiveScrip;
+    InteractuableItem interactiveScript;
 
     [SerializeField]
     List<string> InteractTags = new List<string>();
@@ -14,11 +14,11 @@ public class Palanca : MonoBehaviour
 
     private void Start()
     {
-        interactiveScrip = GetComponent<InteractuableItem>();
+        interactiveScript = GetComponent<InteractuableItem>();
 
         animator = GetComponentInChildren<Animator>();
 
-        animator.SetBool("startOn", interactiveScrip.activated);
+        animator.SetBool("startOn", interactiveScript.activated);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,9 +27,14 @@ public class Palanca : MonoBehaviour
         {
             if (collision.CompareTag(tag))
             {
-                interactiveScrip.activated = !interactiveScrip.activated;
+                interactiveScript.activated = !interactiveScript.activated;
                 animator.SetTrigger("toggle");
             }
         }
+    }
+
+    public void ResetAnimation()
+    {
+        animator.SetTrigger("toggle");
     }
 }
