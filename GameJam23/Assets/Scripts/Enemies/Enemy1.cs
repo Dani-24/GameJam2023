@@ -84,8 +84,12 @@ public class Enemy1 : MonoBehaviour
 
     [SerializeField] BoxCollider2D boxCollider;
 
+    Transform originalPos;
+
     private void Start()
     {
+        originalPos = transform;
+
         fullHP = HP;
 
         flippedScale = originalScale = transform.localScale;
@@ -170,11 +174,15 @@ public class Enemy1 : MonoBehaviour
                 animator.SetBool("idle", true);
             }
         }
+        else
+        {
+            DeactivateCollider();
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!playerScript.isRedo)
+        if (!playerScript.isRedo && currentState != EnemyStates.Dead)
         {
             // Movimiento Enemigo ===
 
@@ -330,6 +338,8 @@ public class Enemy1 : MonoBehaviour
 
     public void ActivateEnemy()
     {
+        transform.position = originalPos.position;
+
         currentState = EnemyStates.Idle;
         HP = fullHP;
         animator.ResetTrigger("die");

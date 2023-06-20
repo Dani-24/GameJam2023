@@ -157,7 +157,10 @@ public class Player : MonoBehaviour
 
             for(int i = 0; i < EnemiesInThisScene.Length; i++)
             {
-                EnemiesInThisScene[i].transform.parent.gameObject.SetActive(true);
+                if (!EnemiesInThisScene[i].transform.parent.gameObject.activeInHierarchy)
+                {
+                    EnemiesInThisScene[i].transform.parent.gameObject.SetActive(true);
+                }
                 EnemiesInThisScene[i].GetComponent<Enemy1>().ActivateEnemy();
             }
         }
