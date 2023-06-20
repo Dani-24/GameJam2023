@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlacaPresion : MonoBehaviour
 {
-    public bool activated;
+    InteractuableItem interactiveScrip;
 
     [SerializeField]
     List<string> InteractTags = new List<string>();
@@ -13,6 +13,7 @@ public class PlacaPresion : MonoBehaviour
 
     private void Start()
     {
+        interactiveScrip = GetComponent<InteractuableItem>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -22,7 +23,7 @@ public class PlacaPresion : MonoBehaviour
         {
             if (collision.CompareTag(tag))
             {
-                activated = true;
+                interactiveScrip.activated = true;
                 animator.SetTrigger("trigger");
             }
         }
@@ -34,7 +35,7 @@ public class PlacaPresion : MonoBehaviour
         {
             if (collision.CompareTag(tag))
             {
-                activated = false;
+                interactiveScrip.activated = false;
                 animator.SetTrigger("trigger");
             }
         }

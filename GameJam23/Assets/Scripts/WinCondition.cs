@@ -10,6 +10,10 @@ public class WinCondition : MonoBehaviour
     [Header("Required Components")]
     [SerializeField] GameObject nextLvlTp;
 
+    [Header("If Activate Things selected")]
+    [SerializeField]
+    List<GameObject> thingsToActivate;
+
     [Header("Debug Info")]
     [SerializeField]
     GameObject[] EnemiesInThisScene;
@@ -17,9 +21,14 @@ public class WinCondition : MonoBehaviour
     [SerializeField]
     int enemyCount = 0;
 
+    [SerializeField]
+    int activablesCount = 0;
+
+    [SerializeField]
     bool allEnemiesDead;
 
-    List<bool> thingsToActivate;
+    [SerializeField]
+    bool allActivated;
 
     void Start()
     {
@@ -27,7 +36,7 @@ public class WinCondition : MonoBehaviour
 
         EnemiesInThisScene = GameObject.FindGameObjectsWithTag("Enemy");
 
-        allEnemiesDead = false;
+        allEnemiesDead = allActivated = false;
     }
 
     void Update()
@@ -42,10 +51,10 @@ public class WinCondition : MonoBehaviour
                 if(allEnemiesDead) { Win(); }
                 break;
             case LvlConditions.ActivateThings:
+                if(allActivated) { Win(); }
                 break;
-            case LvlConditions.GetToThePoint: 
-                break;
-            case LvlConditions.KillAndActivateThings: 
+            case LvlConditions.Both:
+                if(allEnemiesDead && allActivated) { Win(); }
                 break;
         }
 
@@ -62,6 +71,20 @@ public class WinCondition : MonoBehaviour
         {
             allEnemiesDead = true;
         }
+
+        // Check activables
+        activablesCount = 0;
+        for(int i = 0; i < thingsToActivate.Count; i++)
+        {
+            if (thingsToActivate[i].GetComponent<InteractuableItem>().activated)
+            {
+                activablesCount++;
+            }
+        }
+        if(activablesCount >= thingsToActivate.Count)
+        {
+            allActivated = true;
+        }
     }
 
     void Win()
@@ -74,7 +97,6 @@ public class WinCondition : MonoBehaviour
         None,
         KillAllEnemies,
         ActivateThings,
-        GetToThePoint,
-        KillAndActivateThings,
+        Both
     }
 }

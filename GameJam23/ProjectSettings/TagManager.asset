@@ -15,6 +15,7 @@ TagManager:
   - LevelManager
   - Eco
   - PlayerCollider
+  - Interactuable
   layers:
   - Default
   - TransparentFX

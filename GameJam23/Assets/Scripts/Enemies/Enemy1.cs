@@ -82,6 +82,8 @@ public class Enemy1 : MonoBehaviour
 
     Player playerScript;
 
+    [SerializeField] BoxCollider2D boxCollider;
+
     private void Start()
     {
         fullHP = HP;
@@ -333,6 +335,8 @@ public class Enemy1 : MonoBehaviour
         animator.ResetTrigger("die");
         animator.Play("Idle");
 
+        ActivateCollider();
+
         if (!startLookingLeft)
         {
             transform.localScale = flippedScale;
@@ -346,6 +350,16 @@ public class Enemy1 : MonoBehaviour
     public void DeactivateEnemy()
     {
         this.transform.parent.gameObject.SetActive(false);
+    }
+
+    void ActivateCollider()
+    {
+        boxCollider.enabled = true;
+    }
+
+    public void DeactivateCollider()
+    {
+        boxCollider.enabled = false;
     }
 
     // ESTADOS DEL BICHO ========

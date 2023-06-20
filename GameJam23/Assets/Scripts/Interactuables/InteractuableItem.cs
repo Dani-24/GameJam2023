@@ -1,0 +1,1 @@
+using UnityEngine; public class InteractuableItem : MonoBehaviour{public bool activated;}

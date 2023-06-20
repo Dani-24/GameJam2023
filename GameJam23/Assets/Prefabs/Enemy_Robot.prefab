@@ -1405,6 +1405,7 @@ MonoBehaviour:
   shootRBot: {fileID: 7324348282707737786}
   shootLTop: {fileID: 7716758155916285567}
   shootLBot: {fileID: 5355234504454408508}
+  boxCollider: {fileID: 7322426453678562723}
 --- !u!61 &7322426453678562723
 BoxCollider2D:
   m_ObjectHideFlags: 0
