@@ -180,28 +180,4 @@ public class Player : MonoBehaviour
     {
         return mousePos;
     }
-
-    // --- Detectar Collisiones q pegan al player ---
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        foreach(var tag in dieByTheseTags)
-        {
-            if(collision.gameObject.tag == tag)
-            {
-                TakeDamage(1);
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        foreach (var tag in dieByTheseTags)
-        {
-            if (collision.tag == tag)
-            {
-                TakeDamage(1);
-            }
-        }
-    }
 }
