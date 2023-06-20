@@ -16,6 +16,12 @@ public class PlayerEco : MonoBehaviour
     Vector2 playerInputEco;
     Vector2 mousePosEco;
     [SerializeField]private GameObject disapearParticle;
+    
+    private EcoManager managerSc;
+    private float _startMovTime=0;
+    private float _startMovDt=0;
+    public bool canMov = false;
+    public float timeee;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +30,14 @@ public class PlayerEco : MonoBehaviour
         //actionsEco = playerActions.CloneActions();
         actionsEco = new List<PlayerEcoActions>(playerActions.CloneActions());
         actionsEcoCpy = new List<PlayerEcoActions>(playerActions.CloneActions()); ;
+        managerSc = GameObject.FindGameObjectWithTag("EcoManager").GetComponent<EcoManager>();
+        if (!managerSc) Debug.Log("ecomanager no va");
         playerActions.ClearActions();
-
+       
         actions = actionsEcoCpy.Count;
-        
+        timeee = _startMovTime = managerSc.starMovTime;
+        timeee = _startMovTime = managerSc.starMovTime;
+
     }
     
     // Update is called once per frame
@@ -37,23 +47,39 @@ public class PlayerEco : MonoBehaviour
         //{
         //    DisapearEco();
         //}
-        if (actionsEco.Count > 0 && !playerSc.isRedo)
+        //!canMov ? _startMovDt += Time.deltaTime :
+            
+       
+        if (canMov)
         {
-            PlayerEcoActions actions = actionsEco[0];
-            transform.position = actions.playerTrans;
-            gameObject.GetComponent<Gun>().SetEcoCanShoot(actions.isShoot);
-            gunRotZ = actions.gunRot;
-            playerInputEco = actions.input;
-            mousePosEco = actions.mousePos;
-            actionsEco.RemoveAt(0);
-            // Debug.Log("a");
-            // transform.rotation = actions.playerTrans.rotation;
+            if (actionsEco.Count > 0 && !playerSc.isRedo)
+            {
+                PlayerEcoActions actions = actionsEco[0];
+                transform.position = actions.playerTrans;
+                gameObject.GetComponent<Gun>().SetEcoCanShoot(actions.isShoot);
+                gunRotZ = actions.gunRot;
+                playerInputEco = actions.input;
+                mousePosEco = actions.mousePos;
+                actionsEco.RemoveAt(0);
+                // Debug.Log("a");
+                // transform.rotation = actions.playerTrans.rotation;
 
+            }
+            else
+            {
+                DisapearEco();
+                Debug.Log("obama");
+            } 
         }
         else
         {
-            DisapearEco();
-            Debug.Log("obama");
+
+            if (_startMovDt >= _startMovTime)
+            {
+                canMov = true;
+                _startMovDt = 0;
+             }
+            else _startMovDt += Time.deltaTime;
         }
     }
 
@@ -89,6 +115,7 @@ public class PlayerEco : MonoBehaviour
         disapearParticle.SetActive(true);
         if (_disapearDt>=disapearTime)
         {
+            canMov = false;
             _disapearDt = 0;
             disapearParticle.SetActive(false);
             gameObject.SetActive(false);
@@ -102,6 +129,7 @@ public class PlayerEco : MonoBehaviour
     {
         Debug.Log("aaaa");
         // gameObject.SetActive(true);
+        
         actionsEco.Clear();
         actionsEco = new List<PlayerEcoActions>(actionsEcoCpy);
     }

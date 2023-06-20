@@ -735,6 +735,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 731719444}
     m_Modifications:
+    - target: {fileID: 1895346741963942490, guid: 1bdca159f970d2a428dbfb22b8a76ffa, type: 3}
+      propertyPath: starMovTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1895346741963942491, guid: 1bdca159f970d2a428dbfb22b8a76ffa, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -781,6 +785,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1895346741963942493, guid: 1bdca159f970d2a428dbfb22b8a76ffa, type: 3}
       propertyPath: m_Name
+      value: EcoManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895346741963942493, guid: 1bdca159f970d2a428dbfb22b8a76ffa, type: 3}
+      propertyPath: m_TagString
       value: EcoManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []

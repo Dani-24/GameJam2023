@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1895346741963942490}
   m_Layer: 0
   m_Name: EcoManager
-  m_TagString: Untagged
+  m_TagString: EcoManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ecoPrefab: {fileID: 4872170629572705754, guid: ce525c962a628ca4891c01f08a58a057, type: 3}
+  starMovTime: 1

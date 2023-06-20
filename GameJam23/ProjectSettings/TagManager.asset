@@ -16,6 +16,7 @@ TagManager:
   - Eco
   - PlayerCollider
   - Interactuable
+  - EcoManager
   layers:
   - Default
   - TransparentFX
