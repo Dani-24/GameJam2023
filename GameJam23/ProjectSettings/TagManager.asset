@@ -14,6 +14,7 @@ TagManager:
   - EnemyShield
   - LevelManager
   - Eco
+  - PlayerCollider
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemigo
   - Barrera
   - PlayerEco
-  - 
+  - AntiTraspasaBarreras
   - 
   - 
   - 

@@ -102,6 +102,7 @@ MonoBehaviour:
   CollideWithTheseTags:
   - Player
   - Wall
+  - PlayerCollider
 --- !u!50 &4798535452142286810
 Rigidbody2D:
   serializedVersion: 4
