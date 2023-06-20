@@ -7559,7 +7559,7 @@ GameObject:
   - component: {fileID: 4872170629572705752}
   - component: {fileID: 4872170629572705756}
   - component: {fileID: 1678747013009094068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerEco
   m_TagString: Eco
   m_Icon: {fileID: 0}

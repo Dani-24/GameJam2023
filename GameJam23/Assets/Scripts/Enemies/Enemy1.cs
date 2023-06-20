@@ -330,7 +330,17 @@ public class Enemy1 : MonoBehaviour
     {
         currentState = EnemyStates.Idle;
         HP = fullHP;
-        animator.SetTrigger("respawn");
+        animator.ResetTrigger("die");
+        animator.Play("Idle");
+
+        if (!startLookingLeft)
+        {
+            transform.localScale = flippedScale;
+        }
+        else
+        {
+            transform.localScale = originalScale;
+        }
     }
 
     public void DeactivateEnemy()
