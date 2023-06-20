@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private bool isDamaging = false;
     [SerializeField] private Transform startTrans;
     [SerializeField] public int clones = 2;
+    [SerializeField] public GameObject redoTrail;
     private Vector3 starto;
     public bool isRedo = false;
     public bool endRedo = false;
@@ -45,8 +46,10 @@ public class Player : MonoBehaviour
         }
         if(isRedo)
         {
+            redoTrail.SetActive(true);
             RedoPlayer();
         }
+        
     }
     private void FixedUpdate()
     {
@@ -135,7 +138,7 @@ public class Player : MonoBehaviour
         else
         {
             // DisapearEco();
-            
+            redoTrail.SetActive(false);
             isRedo = false;
             endRedo = true;
             Debug.Log("obama");

@@ -15,6 +15,7 @@ public class PlayerEco : MonoBehaviour
     Player playerSc;
     Vector2 playerInputEco;
     Vector2 mousePosEco;
+    [SerializeField]private GameObject disapearParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +26,8 @@ public class PlayerEco : MonoBehaviour
         actionsEcoCpy = new List<PlayerEcoActions>(playerActions.CloneActions()); ;
         playerActions.ClearActions();
 
-        actions = actionsEcoCpy.Count; 
-
+        actions = actionsEcoCpy.Count;
+        
     }
     
     // Update is called once per frame
@@ -85,11 +86,13 @@ public class PlayerEco : MonoBehaviour
     public void DisapearEco()
     {
         _disapearDt += Time.deltaTime;
-        if(_disapearDt>=disapearTime)
+        disapearParticle.SetActive(true);
+        if (_disapearDt>=disapearTime)
         {
             _disapearDt = 0;
+            disapearParticle.SetActive(false);
             gameObject.SetActive(false);
-           // RestartEcoPos();
+            // RestartEcoPos();
             //Destroy(gameObject);
         }
 
