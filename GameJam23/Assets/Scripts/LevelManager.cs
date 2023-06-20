@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField] Animator redoAnimator;
+
     private GameObject player;
     [SerializeField] private Transform spawn;
 
@@ -24,5 +26,13 @@ public class LevelManager : MonoBehaviour
     public void NextLevel() 
     {
         SceneManager.LoadScene(nextLevelName);
+    }
+
+    private void Update()
+    {
+        if(player != null)
+        {
+            redoAnimator.SetBool("redo", player.GetComponent<Player>().isRedo);
+        }
     }
 }

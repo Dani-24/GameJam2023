@@ -71,6 +71,11 @@ public class WinCondition : MonoBehaviour
         {
             allEnemiesDead = true;
         }
+        else
+        {
+            allEnemiesDead = false;
+            Win(false);
+        }
 
         // Check activables
         activablesCount = 0;
@@ -85,11 +90,16 @@ public class WinCondition : MonoBehaviour
         {
             allActivated = true;
         }
+        else
+        {
+            allActivated = false; 
+            Win(false);
+        }
     }
 
-    void Win()
+    void Win(bool win = true)
     {
-        nextLvlTp.SetActive(true);
+        nextLvlTp.SetActive(win);
     }
 
     enum LvlConditions
