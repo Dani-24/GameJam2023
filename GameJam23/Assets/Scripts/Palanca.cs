@@ -14,7 +14,7 @@ public class Palanca : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         animator.SetBool("startOn", activated);
     }

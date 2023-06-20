@@ -24,8 +24,7 @@ public class Player : MonoBehaviour
     Vector2 mousePos;
     //List<PlayerEcoActions> actionsList;
 
-    [SerializeField]
-    List<string> dieByTheseTags = new List<string>();
+    public List<string> dieByTheseTags = new List<string>();
 
     GameObject[] EnemiesInThisScene;
 
@@ -75,7 +74,7 @@ public class Player : MonoBehaviour
         Debug.Log("Furro q veo Furro q pateo");
 
         life -= dmg;
-        lives -= 1;
+
         if(life<=0 )
         {
             if(lives<=0)
@@ -86,6 +85,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                lives -= 1;
                 isDamaging = true;
             }
         }

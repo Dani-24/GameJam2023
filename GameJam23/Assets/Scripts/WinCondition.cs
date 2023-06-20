@@ -5,7 +5,7 @@ using UnityEngine;
 public class WinCondition : MonoBehaviour
 {
     [Header("Win Condition")]
-    [SerializeField] bool killAllEnemies = true;
+    [SerializeField] LvlConditions conditions = LvlConditions.None;
 
     [Header("Required Components")]
     [SerializeField] GameObject nextLvlTp;
@@ -19,6 +19,8 @@ public class WinCondition : MonoBehaviour
 
     bool allEnemiesDead;
 
+    List<bool> thingsToActivate;
+
     void Start()
     {
         nextLvlTp.SetActive(false);
@@ -30,10 +32,21 @@ public class WinCondition : MonoBehaviour
 
     void Update()
     {
-        // Ganar
-        if(killAllEnemies && allEnemiesDead)
+        // Saber Ganar
+        switch (conditions)
         {
-            Win();
+            case LvlConditions.None:
+                Win();
+                break;
+            case LvlConditions.KillAllEnemies:
+                if(allEnemiesDead) { Win(); }
+                break;
+            case LvlConditions.ActivateThings:
+                break;
+            case LvlConditions.GetToThePoint: 
+                break;
+            case LvlConditions.KillAndActivateThings: 
+                break;
         }
 
         // Contar enemigos en la scene
@@ -54,5 +67,14 @@ public class WinCondition : MonoBehaviour
     void Win()
     {
         nextLvlTp.SetActive(true);
+    }
+
+    enum LvlConditions
+    {
+        None,
+        KillAllEnemies,
+        ActivateThings,
+        GetToThePoint,
+        KillAndActivateThings,
     }
 }
