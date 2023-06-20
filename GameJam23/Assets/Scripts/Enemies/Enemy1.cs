@@ -337,6 +337,8 @@ public class Enemy1 : MonoBehaviour
 
         ActivateCollider();
 
+        ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+
         if (!startLookingLeft)
         {
             transform.localScale = flippedScale;
