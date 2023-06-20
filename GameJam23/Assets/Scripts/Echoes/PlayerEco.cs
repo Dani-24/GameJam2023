@@ -37,7 +37,7 @@ public class PlayerEco : MonoBehaviour
         //{
         //    DisapearEco();
         //}
-        if (actionsEco.Count > 0)
+        if (actionsEco.Count > 0 && !playerSc.isRedo)
         {
             PlayerEcoActions actions = actionsEco[0];
             transform.position = actions.playerTrans;

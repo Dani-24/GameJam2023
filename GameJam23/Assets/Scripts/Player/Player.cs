@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     Quaternion gunRotZ;
     Vector2 playerInput;
     Vector2 mousePos;
+    public bool isMoving = false; 
     //List<PlayerEcoActions> actionsList;
 
     public List<string> dieByTheseTags = new List<string>();
@@ -151,6 +152,7 @@ public class Player : MonoBehaviour
             redoTrail.SetActive(false);
             isRedo = false;
             endRedo = true;
+            isMoving = false;
             Debug.Log("obama");
 
             for(int i = 0; i < EnemiesInThisScene.Length; i++)

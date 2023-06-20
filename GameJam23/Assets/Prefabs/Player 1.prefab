@@ -259,14 +259,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6688274832162426701}
-  m_LocalRotation: {x: 0, y: 0, z: -0.5735764, w: 0.8191521}
+  m_LocalRotation: {x: 0, y: 0, z: -0.4717815, w: 0.88171554}
   m_LocalPosition: {x: 0.653, y: 0.129, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6688274833712150693}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -70}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -56.3}
 --- !u!1 &6688274832168961485
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6688274832862036012}
-  m_LocalRotation: {x: -0, y: -0, z: 0.86163646, w: -0.50752604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.41, y: 1.907, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 6688274832957929067}
   - component: {fileID: 6688274832957929066}
   m_Layer: 0
-  m_Name: Capa 118
+  m_Name: GunTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -962,6 +962,7 @@ MonoBehaviour:
   redoTrail: {fileID: 1263937394}
   isRedo: 0
   endRedo: 0
+  isMoving: 0
   dieByTheseTags:
   - Enemy
   - EnemyBullet

@@ -33,9 +33,10 @@ public class RecodActions : MonoBehaviour
 
         if (canRedcord)
         {
-            if (playerSc.GetInputPlayer().x != 0 || playerSc.GetInputPlayer().y != 0 || gunSc.GetIsShooting()) 
+            if (playerSc.GetInputPlayer().x != 0 || playerSc.GetInputPlayer().y != 0 || gunSc.GetIsShooting() || playerSc.isMoving) 
             {
-               // StartRecording();
+                // StartRecording();
+                playerSc.isMoving = true;
                 InSertOnList();
             }
             else
