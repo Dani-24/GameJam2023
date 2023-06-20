@@ -115,6 +115,8 @@ public class Enemy1 : MonoBehaviour
                 case ShieldDirection.Right:
                     ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
                     break;
+                case ShieldDirection.Aiming:
+                    break;
             }
         }
     }
@@ -141,6 +143,13 @@ public class Enemy1 : MonoBehaviour
             else
             {
                 EnemyShoot();
+            }
+
+            if (shieldDirection == ShieldDirection.Aiming)
+            {
+                Vector2 lookDir = currentlyTargeting.transform.position - transform.position;
+                float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 180f;
+                ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, rotZ);
             }
         }
         else { 
@@ -314,6 +323,7 @@ public class Enemy1 : MonoBehaviour
         Right,
         Up,
         Down,
+        Aiming,
         Disabled
     }
 }
