@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float vel = 2;
     private Rigidbody2D playerRB;
     private Vector2 input;
-    [SerializeField]private int lives=3;
+   
     [SerializeField]private int life=1;
     private bool isDamaging = false;
     [SerializeField] private Transform startTrans;
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 
         if(life<=0 )
         {
-            if(lives<=0)
+            if(clones<=0)
             {
 
                 //Die();
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                lives -= 1;
+               
                 isDamaging = true;
             }
         }
