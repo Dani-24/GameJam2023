@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Enemy1 : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField]
     int HP = 1;
+    int fullHP;
+
     [SerializeField]
     float movementSpeed = 1;
 
@@ -81,6 +84,8 @@ public class Enemy1 : MonoBehaviour
 
     private void Start()
     {
+        fullHP = HP;
+
         flippedScale = originalScale = transform.localScale;
         flippedScale.x *= -1;
 
@@ -96,16 +101,16 @@ public class Enemy1 : MonoBehaviour
 
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
-        if(patrolCheckpoints.Count > 0 && movementType == MovTypes.Patrol)
+        if (patrolCheckpoints.Count > 0 && movementType == MovTypes.Patrol)
         {
             currentCheckpoint = patrolCheckpoints[0];
         }
 
-        if(shieldDirection != ShieldDirection.Disabled)
+        if (shieldDirection != ShieldDirection.Disabled)
         {
             ShieldGameObject.SetActive(true);
 
-            switch(shieldDirection)
+            switch (shieldDirection)
             {
                 case ShieldDirection.Down:
                     ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
@@ -319,6 +324,13 @@ public class Enemy1 : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void ActivateEnemy()
+    {
+        currentState = EnemyStates.Idle;
+        HP = fullHP;
+        animator.SetTrigger("respawn");
     }
 
     public void DeactivateEnemy()

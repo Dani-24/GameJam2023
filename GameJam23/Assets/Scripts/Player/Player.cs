@@ -27,12 +27,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     List<string> dieByTheseTags = new List<string>();
 
+    GameObject[] EnemiesInThisScene;
+
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
         startTrans = transform;
         playerActions = gameObject.GetComponent<RecodActions>();
         starto = startTrans.position;
+
+        EnemiesInThisScene = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -148,6 +152,12 @@ public class Player : MonoBehaviour
             isRedo = false;
             endRedo = true;
             Debug.Log("obama");
+
+            for(int i = 0; i < EnemiesInThisScene.Length; i++)
+            {
+                EnemiesInThisScene[i].transform.parent.gameObject.SetActive(true);
+                EnemiesInThisScene[i].GetComponent<Enemy1>().ActivateEnemy();
+            }
         }
     }
 
