@@ -56,7 +56,7 @@ public class Enemy1 : MonoBehaviour
     public GameObject currentlyTargeting;
 
     Animator animator;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     [Header("Required Prefabs")]
     [SerializeField]
@@ -89,12 +89,8 @@ public class Enemy1 : MonoBehaviour
 
     [SerializeField] BoxCollider2D boxCollider;
 
-    Transform originalPos;
-
     private void Start()
     {
-        originalPos = transform;
-
         fullHP = HP;
 
         flippedScale = originalScale = transform.localScale;
@@ -117,6 +113,11 @@ public class Enemy1 : MonoBehaviour
             currentCheckpoint = patrolCheckpoints[0];
         }
 
+        ShieldPlacer();
+    }
+
+    void ShieldPlacer()
+    {
         if (shieldDirection != ShieldDirection.Disabled)
         {
             ShieldGameObject.SetActive(true);
@@ -349,8 +350,6 @@ public class Enemy1 : MonoBehaviour
 
     public void ActivateEnemy()
     {
-        transform.position = originalPos.position;
-
         currentState = EnemyStates.Idle;
         HP = fullHP;
         animator.ResetTrigger("die");
@@ -358,7 +357,7 @@ public class Enemy1 : MonoBehaviour
 
         ActivateCollider();
 
-        ShieldGameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        ShieldPlacer();
 
         if (!startLookingLeft)
         {
@@ -368,6 +367,8 @@ public class Enemy1 : MonoBehaviour
         {
             transform.localScale = originalScale;
         }
+
+        rb.WakeUp();
     }
 
     public void DeactivateEnemy()
