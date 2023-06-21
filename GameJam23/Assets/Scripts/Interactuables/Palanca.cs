@@ -12,6 +12,8 @@ public class Palanca : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField] private AudioSource audioClip;
+
     private void Start()
     {
         interactiveScript = GetComponent<InteractuableItem>();
@@ -29,6 +31,7 @@ public class Palanca : MonoBehaviour
             {
                 interactiveScript.activated = !interactiveScript.activated;
                 animator.SetTrigger("toggle");
+                audioClip.Play();
             }
         }
     }

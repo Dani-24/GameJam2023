@@ -10,7 +10,7 @@ public class PlacaPresion : MonoBehaviour
     List<string> InteractTags = new List<string>();
 
     Animator animator;
-
+    [SerializeField] private AudioSource audioClip;
     void Start()
     {
         interactiveScript = GetComponent<InteractuableItem>();
@@ -25,6 +25,7 @@ public class PlacaPresion : MonoBehaviour
             {
                 interactiveScript.activated = true;
                 animator.SetTrigger("trigger");
+                audioClip.Play();
             }
         }
     }

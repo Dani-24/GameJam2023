@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
     private bool isShooting = false;
     private bool ecoCanShoot = false;
     Player playerSc;
+    [SerializeField] private AudioSource audioClip;
     void Start()
     {
         //  bulletSpawn = GameObject.FindGameObjectWithTag("Gun").transform;
@@ -31,6 +32,7 @@ public class Gun : MonoBehaviour
                 _shootDt = 0;
                 isShooting = true;
                 ecoCanShoot = false;
+                audioClip.Play();
             }
 
         }

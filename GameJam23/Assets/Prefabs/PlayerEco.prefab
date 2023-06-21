@@ -7626,6 +7626,7 @@ MonoBehaviour:
   bulletVel: 15
   bulletSpawn: {fileID: 4872170629950980442}
   shootDelay: 0.3
+  audioClip: {fileID: 0}
 --- !u!114 &4872170629572705756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7656,7 +7657,7 @@ MonoBehaviour:
   disapearTime: 2
   actions: 0
   disapearParticle: {fileID: 398698892}
-  ecoManagerGO: {fileID: 0}
+  canMov: 0
   timeee: 0
 --- !u!50 &-4882537778966018963
 Rigidbody2D:

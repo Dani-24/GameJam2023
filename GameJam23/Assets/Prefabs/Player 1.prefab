@@ -942,6 +942,7 @@ MonoBehaviour:
   bulletVel: 15
   bulletSpawn: {fileID: 6688274832162426706}
   shootDelay: 0.3
+  audioClip: {fileID: 0}
 --- !u!114 &6688274833663226835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,6 +966,7 @@ MonoBehaviour:
   dieByTheseTags:
   - Enemy
   - EnemyBullet
+  audioSource: {fileID: 0}
 --- !u!114 &6688274833663226836
 MonoBehaviour:
   m_ObjectHideFlags: 0

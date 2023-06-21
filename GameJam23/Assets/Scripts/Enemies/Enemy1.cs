@@ -86,6 +86,8 @@ public class Enemy1 : MonoBehaviour
 
     Transform originalPos;
 
+    [SerializeField] private AudioSource audioClip;
+
     private void Start()
     {
         originalPos = transform;
@@ -301,6 +303,8 @@ public class Enemy1 : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPosition.position, bulletSpawnPosition.rotation);
             Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
             bulletRB.AddForce(bulletSpawnPosition.up * bulletVel, ForceMode2D.Impulse);
+
+            audioClip.Play();
         }
     }
 
