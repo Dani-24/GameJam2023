@@ -58,6 +58,7 @@ public class UiInformation : MonoBehaviour
 
     public void GoToTitle()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Intro");
     }
 }
