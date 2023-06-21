@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private bool isDamaging = false;
     [SerializeField] private Transform startTrans;
     [SerializeField] public int clones = 2;
+    public bool isDead = false;
     [SerializeField] public GameObject redoTrail;
     private Vector3 starto;
     public bool isRedo = false;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
    
     void Start()
     {
+        isDead = false;
         playerRB = gameObject.GetComponent<Rigidbody2D>();
         startTrans = transform;
         playerActions = gameObject.GetComponent<RecodActions>();
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour
             if(clones<=0)
             {
 
-                //Die();
+                isDead = true;
                 
             }
             else

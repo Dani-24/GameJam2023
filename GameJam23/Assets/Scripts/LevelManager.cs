@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel() 
     {
-        if (!restarting)
+        if (!restarting && !player.GetComponent<Player>().isDead)
         {
             SceneManager.LoadScene(nextLevelName);
         }
@@ -66,6 +66,11 @@ public class LevelManager : MonoBehaviour
         if(player != null)
         {
             redoAnimator.SetBool("redo", player.GetComponent<Player>().isRedo);
+
+            if (player.GetComponent<Player>().isDead)
+            {
+                NextLevel();
+            }
         }
 
         if (Input.GetKey(restartKey))
