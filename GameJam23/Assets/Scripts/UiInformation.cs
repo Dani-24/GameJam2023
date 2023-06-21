@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiInformation : MonoBehaviour
 {
@@ -12,11 +13,17 @@ public class UiInformation : MonoBehaviour
 
     Player playerScript;
 
+    bool isSettingsOpen;
+
+    [SerializeField] GameObject settingsCanvas;
+
     void Start()
     {
         titleText.text = currentLvl;
 
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        isSettingsOpen = false;
     }
 
     
@@ -26,5 +33,31 @@ public class UiInformation : MonoBehaviour
         {
             contadorIntentos.text = playerScript.clones.ToString();
         }
+
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            ToggleSettings();
+        }
+    }
+
+    public void ToggleSettings()
+    {
+        if (!isSettingsOpen)
+        {
+            settingsCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            settingsCanvas.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        isSettingsOpen = !isSettingsOpen;
+    }
+
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene("Intro");
     }
 }

@@ -513,6 +513,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -10.950001
       objectReference: {fileID: 0}
+    - target: {fileID: 6474995672215162367, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672215162367, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672215162367, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672768036495, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672768036495, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672883092467, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672883092467, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995672883092467, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995673446318120, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474995673446318120, guid: 545157a10eae372439121378287b455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6819007550152680048, guid: 545157a10eae372439121378287b455e, type: 3}
       propertyPath: currentLvl
       value: Level 3
@@ -796,7 +836,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009670258, y: 4.971054}
+  m_Offset: {x: 0.009670258, y: 4.728838}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -807,7 +847,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.067917, y: 0.7257061}
+  m_Size: {x: 17.067917, y: 1.2101388}
   m_EdgeRadius: 0
 --- !u!61 &1543336121
 BoxCollider2D:
