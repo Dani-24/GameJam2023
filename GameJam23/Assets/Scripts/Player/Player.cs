@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         if(isRedo)
         {
             redoTrail.SetActive(true);
-            RedoPlayer();
+            if( Time.timeScale == 1f) RedoPlayer();
         }
         
     }
