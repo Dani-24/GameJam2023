@@ -31,7 +31,7 @@ public class RecodActions : MonoBehaviour
     void LateUpdate()
     {
 
-        if (canRedcord)
+        if (canRedcord&&Time.timeScale==1f)
         {
             if (playerSc.GetInputPlayer().x != 0 || playerSc.GetInputPlayer().y != 0 || gunSc.GetIsShooting() || playerSc.isMoving) 
             {
