@@ -29,6 +29,10 @@ public class LevelManager : MonoBehaviour
 
     bool restarting = false;
 
+    [Header("BG Music")]
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] List<AudioClip> clipList;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -39,6 +43,10 @@ public class LevelManager : MonoBehaviour
         restartSlider.value = skipSlider.value = 0;
 
         restarting = false;
+
+        int randomIndex = Random.Range(0, clipList.Count);
+        musicSource.clip = clipList[randomIndex];
+        musicSource.Play();
     }
 
     public void NextLevel() 

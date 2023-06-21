@@ -73,7 +73,7 @@ public class Enemy1 : MonoBehaviour
     public float minPitch = 0.1f;
     public float maxPitch = 0.6f;
 
-    [Header("Other")]
+    [Header("Other Bullshit")]
     public ParticleSystem DieParticleSystem;
 
     [SerializeField]

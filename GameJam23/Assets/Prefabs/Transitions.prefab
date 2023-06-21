@@ -395,6 +395,8 @@ MonoBehaviour:
   source: {fileID: 8272438553413161872}
   fadeIn: {fileID: 8300000, guid: 967f374fca8439e409bb0c870ec71b5c, type: 3}
   fadeOut: {fileID: 8300000, guid: fe15eabcb1623c045a077702fdaf7692, type: 3}
+  minPitch: 1
+  maxPitch: 1.05
 --- !u!82 &8272438553413161872
 AudioSource:
   m_ObjectHideFlags: 0
@@ -404,7 +406,7 @@ AudioSource:
   m_GameObject: {fileID: 4578912163511879642}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3269699053024654597, guid: a034c3bf0d2c63a4da024260b3a72753, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.55

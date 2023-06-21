@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class UiInformation : MonoBehaviour
 {
-    public string currentLvl;
-
     [SerializeField] TMP_Text titleText;
     [SerializeField] TMP_Text contadorIntentos;
 
@@ -17,9 +15,13 @@ public class UiInformation : MonoBehaviour
 
     [SerializeField] GameObject settingsCanvas;
 
+    AudioSource audioSource;
+
     void Start()
     {
-        titleText.text = currentLvl;
+        audioSource = GetComponent<AudioSource>();
+
+        titleText.text = SceneManager.GetActiveScene().name;
 
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
@@ -49,6 +51,8 @@ public class UiInformation : MonoBehaviour
         }
         else
         {
+            audioSource.Play();
+
             settingsCanvas.SetActive(false);
             Time.timeScale = 1;
         }
