@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     GameObject[] enemiesInThisScene;
     GameObject[] interactablesInThisScene;
 
+    GameObject[] enemiesInThisSceneOriginalPos;
+
     [SerializeField] private AudioSource redoAudioSource;
    
     void Start()
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
 
         enemiesInThisScene = GameObject.FindGameObjectsWithTag("Enemy");
         interactablesInThisScene = GameObject.FindGameObjectsWithTag("Interactuable");
+
+        enemiesInThisSceneOriginalPos = enemiesInThisScene;
     }
 
     // Update is called once per frame
@@ -170,6 +174,11 @@ public class Player : MonoBehaviour
                 {
                     enemiesInThisScene[i].transform.parent.gameObject.SetActive(true);
                 }
+
+                enemiesInThisScene[i].GetComponent<Enemy1>().rb.Sleep();
+
+                enemiesInThisScene[i].GetComponent<Enemy1>().rb.position = enemiesInThisSceneOriginalPos[i].transform.position;
+
                 enemiesInThisScene[i].GetComponent<Enemy1>().ActivateEnemy();
             }
 
