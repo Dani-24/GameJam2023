@@ -13,7 +13,11 @@ public class Gun : MonoBehaviour
     private bool isShooting = false;
     private bool ecoCanShoot = false;
     Player playerSc;
-    [SerializeField] private AudioSource audioClip;
+
+    [SerializeField] AudioSource shootAudioClip;
+    public float minPitch = 0.9f;
+    public float maxPitch = 1.1f;
+
     void Start()
     {
         //  bulletSpawn = GameObject.FindGameObjectWithTag("Gun").transform;
@@ -32,7 +36,11 @@ public class Gun : MonoBehaviour
                 _shootDt = 0;
                 isShooting = true;
                 ecoCanShoot = false;
-                audioClip.Play();
+
+                float randomPitch = Random.Range(minPitch, maxPitch);
+                shootAudioClip.pitch =randomPitch;
+
+                shootAudioClip.Play();
             }
 
         }

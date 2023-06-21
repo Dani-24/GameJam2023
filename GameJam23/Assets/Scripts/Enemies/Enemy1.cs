@@ -68,6 +68,11 @@ public class Enemy1 : MonoBehaviour
     [SerializeField]
     Transform DetectionAreaTransform;
 
+    [SerializeField] private AudioSource shootAudioClip;
+
+    public float minPitch = 0.1f;
+    public float maxPitch = 0.6f;
+
     [Header("Other")]
     public ParticleSystem DieParticleSystem;
 
@@ -85,8 +90,6 @@ public class Enemy1 : MonoBehaviour
     [SerializeField] BoxCollider2D boxCollider;
 
     Transform originalPos;
-
-    [SerializeField] private AudioSource audioClip;
 
     private void Start()
     {
@@ -304,7 +307,11 @@ public class Enemy1 : MonoBehaviour
             Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
             bulletRB.AddForce(bulletSpawnPosition.up * bulletVel, ForceMode2D.Impulse);
 
-            audioClip.Play();
+            float randomPitch = UnityEngine.Random.Range(minPitch, maxPitch);
+
+            shootAudioClip.pitch = randomPitch;
+
+            shootAudioClip.Play();
         }
     }
 

@@ -30,9 +30,8 @@ public class Player : MonoBehaviour
     GameObject[] enemiesInThisScene;
     GameObject[] interactablesInThisScene;
 
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource redoAudioSource;
    
-
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
@@ -147,14 +146,14 @@ public class Player : MonoBehaviour
             playerInput = actions.input;
             mousePos = actions.mousePos;
             redoPlayercpy.RemoveAt(0);
-            if(!audioSource.isPlaying)audioSource.Play();
+            if(!redoAudioSource.isPlaying)redoAudioSource.Play();
             // Debug.Log("a");
             // transform.rotation = actions.playerTrans.rotation;
 
         }
         else
         {
-            audioSource.Stop();
+            redoAudioSource.Stop();
             // DisapearEco();
             redoTrail.SetActive(false);
             isRedo = false;
