@@ -114,7 +114,7 @@ ScriptedImporter:
     uvTransform: {x: -83, y: 311}
   - name: Interseccion copia 2
     originalName: 
-    pivot: {x: 0.36303797, y: 0.56322247}
+    pivot: {x: 0.34845543, y: 0.6470084}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -135,7 +135,7 @@ ScriptedImporter:
     uvTransform: {x: -85, y: -409}
   - name: Interseccion copia
     originalName: 
-    pivot: {x: 0.3646151, y: 0.5759682}
+    pivot: {x: 0.2889923, y: 0.5759673}
     alignment: 9
     border: {x: 1, y: 0, z: 0, w: 0}
     rect:
