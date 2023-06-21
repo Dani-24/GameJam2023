@@ -6,6 +6,8 @@ public class EnemyDetectionArea : MonoBehaviour
 {
     Enemy1 enemyScript;
 
+    [SerializeField]CircleCollider2D circleCollider;
+
     private void Start()
     {
         enemyScript = transform.parent.GetComponentInChildren<Enemy1>();
@@ -29,6 +31,20 @@ public class EnemyDetectionArea : MonoBehaviour
             if (collision.tag == enemyScript.currentlyTargeting.tag)
             {
                enemyScript.SetTarget(null);
+
+                GameObject[] gameObjects = null;
+                foreach (var tag in enemyScript.chaseTheseTags)
+                {
+                    gameObjects = GameObject.FindGameObjectsWithTag(tag);
+                }
+
+                for(int i = 0; i < gameObjects.Length; i++)
+                {
+                    if ((gameObjects[i].transform.position - enemyScript.transform.position).magnitude < circleCollider.radius)
+                    {
+                        enemyScript.SetTarget(gameObjects[i]);
+                    }
+                }
             }
         }
     }
